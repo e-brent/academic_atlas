@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "email": "enb40@pitt.edu",
+      "username": "raccoonLover2002",
+      "password": "password",
+      "favorites": [
+        1,
+        2,
+        10
+      ],
+      "location": [
+        0,
+        0
+      ]
+    }
+  ]
+}
