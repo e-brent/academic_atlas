@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'package:academic_atlas/view/map_view.dart';
+import 'package:academic_atlas/view_model/location_list_view_model.dart';
+
+import 'package:academic_atlas/view/locations_list_view.dart';
+//import 'package:academic_atlas/view/map_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +28,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MapView(),
+      home:
+        ChangeNotifierProvider(
+            create: (context) => LocationListViewModel(),
+            child: LocationListView()
+        ),
     );
   }
 }
