@@ -12,11 +12,11 @@ class LocationViewModel{
   String get name {
     return location.name;
   }
-/*
-  Map<String, List<double>> get hours {
+
+  String get hours {
     return location.hours;
   }
- */
+ 
 
   String get address {
     return location.address;
@@ -24,6 +24,14 @@ class LocationViewModel{
 
   String get image {
     return location.image;
+  }
+
+  double get coordNS {
+    return location.coordNS;
+  }
+
+  double get coordEW {
+    return location.coordEW;
   }
 
   /*
