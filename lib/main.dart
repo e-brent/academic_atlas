@@ -36,20 +36,19 @@ class MyApp extends StatelessWidget {
           create: (context) => LocationListViewModel(),
           child:Column(
             children: [
-            Container(
-              width:double.infinity,
-              height: 500,
-              child:MapView(),
-            ),
-            Expanded(
-              child: LocationListView(),
-              )
-      ],
-        ),
-
+              Container(
+                width:double.infinity,
+                height: 500,
+                child:MapView(),
+              ),
+              Expanded(
+                child: LocationListView(),
+                )
+            ],
+          ),
+      ),
       onGenerateRoute: LocalRouter.Router.generateRoute,
       initialRoute: listRoute,
-      ),
     );
   }
 }
