@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'router.dart' as LocalRouter;
+import 'constants.dart';
+
 import 'package:academic_atlas/view_model/location_list_view_model.dart';
 
 import 'package:academic_atlas/view/locations_list_view.dart';
@@ -43,8 +46,10 @@ class MyApp extends StatelessWidget {
               )
       ],
         ),
-          ),
 
+      onGenerateRoute: LocalRouter.Router.generateRoute,
+      initialRoute: listRoute,
+      ),
     );
   }
 }
