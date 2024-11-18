@@ -16,7 +16,6 @@ class LocationViewModel{
   String get hours {
     return location.hours;
   }
- 
 
   String get address {
     return location.address;
