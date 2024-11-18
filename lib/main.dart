@@ -7,7 +7,7 @@ import 'constants.dart';
 import 'package:academic_atlas/view_model/location_list_view_model.dart';
 
 import 'package:academic_atlas/view/locations_list_view.dart';
-//import 'package:academic_atlas/view/map_view.dart';
+import 'package:academic_atlas/view/map_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,11 +33,23 @@ class MyApp extends StatelessWidget {
       ),
       home:
         ChangeNotifierProvider(
-            create: (context) => LocationListViewModel(),
-            child: LocationListView()
+          create: (context) => LocationListViewModel(),
+          child:Column(
+            children: [
+            Container(
+              width:double.infinity,
+              height: 500,
+              child:MapView(),
+            ),
+            Expanded(
+              child: LocationListView(),
+              )
+      ],
         ),
+
       onGenerateRoute: LocalRouter.Router.generateRoute,
       initialRoute: listRoute,
+      ),
     );
   }
 }
