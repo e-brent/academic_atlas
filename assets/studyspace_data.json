@@ -1,0 +1,116 @@
+{
+  "studyspaces": [
+    {
+      "id": 0,
+      "name": "Floor 1",
+      "location": 0,
+      "crowdLevel": 0.5,
+      "currentAmenities": [
+        {
+          "amenity": "quiet"
+        },
+        {
+          "amenity": "only small tables left"
+        },
+        {
+          "amenity": "no outlets"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Food and coffee (Saxby's)"
+        },
+        {
+          "amenity": "Restrooms"
+        },
+        {
+          "amenity": "Water bottle fill stations"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Floor 2",
+      "location": 0,
+      "crowdLevel": 0.8,
+      "currentAmenities": [
+        {
+          "amenity": "no whiteboards"
+        },
+        {
+          "amenity": "construction noise"
+        },
+        {
+          "amenity": "study rooms being loud"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Large and small tables"
+        },
+        {
+          "amenity": "Comfortable chairs"
+        },
+        {
+          "amenity": "Good lighting"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Einstein Bro's seating",
+      "location": 1,
+      "crowdLevel": 0.75,
+      "currentAmenities": [
+        {
+          "amenity": "no seating"
+        },
+        {
+          "amenity": "burning smell"
+        },
+        {
+          "amenity": "dirty tables"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Food and coffee (Einstein Bro's)"
+        },
+        {
+          "amenity": "No outlets"
+        },
+        {
+          "amenity": "Large and small tables"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Schenley Plaza overlook, floor 2",
+      "location": 1,
+      "crowdLevel": 1.00,
+      "currentAmenities": [
+        {
+          "amenity": "no seating"
+        },
+        {
+          "amenity": "tours being loud"
+        },
+        {
+          "amenity": "broken outlets"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Outlets"
+        },
+        {
+          "amenity": "Good lighting"
+        },
+        {
+          "amenity": "Small tables"
+        }
+      ]
+    }
+  ]
+}
