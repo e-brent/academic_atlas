@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+            home:Column(
             children: [
               Container(
                 width:double.infinity,
@@ -50,10 +51,12 @@ class MyApp extends StatelessWidget {
                 child: LocationListView(),
                 )
             ],
+
           ),
         onGenerateRoute: LocalRouter.Router.generateRoute,
         initialRoute: listRoute,
       ),
+
     );
   }
 }
