@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:academic_atlas/view/update_crowd_view.dart';
+
 import 'package:provider/provider.dart';
 
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
@@ -30,7 +32,23 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
       appBar: AppBar(
           title: Text(vm.location != null ? vm.location!.name : 'Loading...')
       ),
-      body: Text("This is a location details page for ${vm.location != null ? vm.location!.name : 'loading...'}"),
+
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("This is a location details pagefor ${vm.location != null ? vm.location!.name : 'loading...'}"),
+            ElevatedButton(
+              onPressed:(){
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const UpdateCrowdView()), );
+            },
+              child:Text("Update Crowd Level"),
+            )
+          ],
+        ),
+      )
+
     );
   }
 

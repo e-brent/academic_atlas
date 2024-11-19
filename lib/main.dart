@@ -6,10 +6,12 @@ import 'router.dart' as LocalRouter;
 import 'constants.dart';
 
 import 'package:academic_atlas/view_model/location_list_view_model.dart';
+import 'package:academic_atlas/view_model/study_space_view_model.dart';
 
 import 'package:academic_atlas/view/locations_list_view.dart';
 import 'package:academic_atlas/view/map_view.dart';
 import 'package:academic_atlas/view/update_crowd_view.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +40,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Column(
             children: [
               Container(
                 width:double.infinity,
