@@ -39,9 +39,9 @@ class Dataservice {
     final List allstudyspaces = json.map((studyspace) => StudySpace.fromJson(studyspace)).toList();
 
     List<StudySpace> studyspaces = [];
-    for (var i = 0; i < allstudyspaces.length; i++){
-      if (allstudyspaces[i]["location"] == locationID){
-        studyspaces.add(allstudyspaces[i]);
+    for (StudySpace space in allstudyspaces){
+      if (space.location == locationID){
+        studyspaces.add(space);
       }
     }
 

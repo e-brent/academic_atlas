@@ -24,13 +24,16 @@ class StudySpace {
   StudySpace({required this.id, required this.name, required this.location, required this.crowdLevel, required this.currentAmenities, required this.generalAmenities});
 
   factory StudySpace.fromJson(Map<String, dynamic> json ){
+    final currAmenitiesData = json['currentAmenities'] as List<dynamic>?;
+    final genAmenitiesData = json['generalAmenities'] as List<dynamic>?;
+
     return StudySpace(
       id: json["id"],
       name: json["name"],
       location: json["location"],
       crowdLevel: json["crowdLevel"],
-      currentAmenities: json["currentAmenities"].map((amenity) => Amenities.fromJson(amenity as Map<String, dynamic>)).toList(),
-      generalAmenities: json["generalAmenities"].map((amenity) => Amenities.fromJson(amenity as Map<String, dynamic>)).toList()
+      currentAmenities: currAmenitiesData != null ? currAmenitiesData.map((amenity) => Amenities.fromJson(amenity as Map<String, dynamic>)).toList(): <Amenities>[],
+      generalAmenities: genAmenitiesData != null ? genAmenitiesData.map((amenity) => Amenities.fromJson(amenity as Map<String, dynamic>)).toList(): <Amenities>[]
     );
   }
 }

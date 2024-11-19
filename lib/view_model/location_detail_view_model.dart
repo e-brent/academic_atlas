@@ -7,6 +7,7 @@ class LocationDetailsViewModel extends ChangeNotifier{
 
   List<StudySpaceViewModel> studyspaces = <StudySpaceViewModel>[];
   LocationViewModel? location;
+  StudySpaceViewModel? studySpace;
 
   Future<void> fetchStudySpaces(int id) async {
     final results = await Dataservice().fetchStudySpaces(id);
@@ -22,5 +23,13 @@ class LocationDetailsViewModel extends ChangeNotifier{
     location = LocationViewModel(location: results);
 
     notifyListeners();
+  }
+
+  List<String> getStudySpaceNames(int id) {
+    List<String> spaceNames = [];
+    for (studySpace in studyspaces){
+      spaceNames.add(studySpace!.name);
+    }
+    return spaceNames;
   }
 }
