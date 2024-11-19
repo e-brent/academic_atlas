@@ -1,14 +1,17 @@
-import 'package:academic_atlas/model/location_model.dart';
+import 'package:flutter/material.dart';
+import 'package:academic_atlas/data_service.dart';
+import 'package:academic_atlas/view_model/location_view_model.dart';
+import 'package:academic_atlas/view_model/study_space_view_model.dart';
 
-class LocationDetailsViewModel {
+class LocationDetailsViewModel extends ChangeNotifier{
 
-  final Location location;
+  List<StudySpaceViewModel> studyspaces = <StudySpaceViewModel>[];
 
-  LocationDetailsViewModel({required this.location});
+  Future<void> fetchStudySpaces(int id) async {
+    final results = await Dataservice().fetchStudySpaces(id);
 
-  String get name {
-    return location.name;
+    studyspaces = results.map((studyspace) => StudySpaceViewModel(studyspace: studyspace)).toList();
+
+    notifyListeners();
   }
-
-
 }
