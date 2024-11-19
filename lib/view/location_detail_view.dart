@@ -15,3 +15,4 @@ class LocationDetailsView extends StatelessWidget {
   }
 
 }
+
