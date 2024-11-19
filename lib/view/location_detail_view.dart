@@ -23,10 +23,17 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpaces(widget.locationID);
   }
 
+  String _dropdownvalue ="";
+
   @override
   Widget build(BuildContext context) {
 
     final vm = Provider.of<LocationDetailsViewModel>(context);
+
+    // Initial Selected Value
+    //_dropdownvalue = vm.studyspaces.first.name;
+
+    var items = vm.getStudySpaceNames(widget.locationID);
 
     return Scaffold (
       appBar: AppBar(
@@ -44,11 +51,28 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   MaterialPageRoute(builder: (context) => const UpdateCrowdView()), );
             },
               child:Text("Update Crowd Level"),
-            )
+            ),
+            new Center(
+            child: new DropdownButton<String>(
+              isDense: true,
+              hint: new Text("Select study space"),
+              value: _dropdownvalue,
+              items: items.map((String items) {
+                return DropdownMenuItem(
+                  value: items,
+                  child: Text(items),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _dropdownvalue = newValue!;
+                });
+              },
+            ),
+          )
           ],
         ),
       )
-
     );
   }
 
