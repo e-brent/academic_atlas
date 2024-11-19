@@ -8,6 +8,7 @@ import 'package:academic_atlas/view_model/location_list_view_model.dart';
 
 import 'package:academic_atlas/view/locations_list_view.dart';
 import 'package:academic_atlas/view/map_view.dart';
+import 'package:academic_atlas/view/update_crowd_view.dart';
 
 void main() {
   runApp(const MyApp());

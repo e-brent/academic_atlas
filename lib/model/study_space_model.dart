@@ -2,8 +2,9 @@
 
 class Amenities {
   final String amenity;
+  bool isSelected;
 
-  Amenities({required this.amenity});
+  Amenities({required this.amenity, this.isSelected=false});
 
   factory Amenities.fromJson(Map<String, dynamic> json){
     return Amenities(
