@@ -6,11 +6,20 @@ import 'package:academic_atlas/view_model/study_space_view_model.dart';
 class LocationDetailsViewModel extends ChangeNotifier{
 
   List<StudySpaceViewModel> studyspaces = <StudySpaceViewModel>[];
+  LocationViewModel? location;
 
   Future<void> fetchStudySpaces(int id) async {
     final results = await Dataservice().fetchStudySpaces(id);
 
     studyspaces = results.map((studyspace) => StudySpaceViewModel(studyspace: studyspace)).toList();
+
+    notifyListeners();
+  }
+
+  Future<void> fetchLocation(int id) async {
+    final results = await Dataservice().fetchLocation(id);
+
+    location = LocationViewModel(location: results);
 
     notifyListeners();
   }

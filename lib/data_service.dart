@@ -16,11 +16,23 @@ class Dataservice {
     return json.map((location) => Location.fromJson(location)).toList();
   }
 
+  Future<Location> fetchLocation(int id) async {
+    final String response = await rootBundle.loadString('assets/location_data.json');
+
+    final data = await jsonDecode(response);
+
+    final Iterable json = data["locations"];
+
+    final List allLocations = json.map((location) => Location.fromJson(location)).toList();
+
+    return allLocations[id];
+  }
+
   Future<List<StudySpace>> fetchStudySpaces(int locationID) async {
 
-    final String reponse = await rootBundle.loadString('assets/studyspace_data.json');
+    final String response = await rootBundle.loadString('assets/studyspace_data.json');
 
-    final data = await jsonDecode(reponse);
+    final data = await jsonDecode(response);
 
     final Iterable json = data["studyspaces"];
 

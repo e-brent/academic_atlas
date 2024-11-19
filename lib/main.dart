@@ -1,3 +1,4 @@
+import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +23,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => LocationListViewModel()),
+          ChangeNotifierProvider(create: (context) => LocationDetailsViewModel()),
+        ],
+      child: MaterialApp(
       title: 'Pitt Academic Atlas',
       theme: ThemeData(
         // This is the theme of your application.
@@ -34,12 +40,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MultiProvider(
-      providers: [
-          ChangeNotifierProvider(create: (context) => LocationListViewModel()),
-          ChangeNotifierProvider(create:(context) => StudySpaceViewModel(studyspace: )),
-        ],
-          child:Column(
             children: [
               Container(
                 width:double.infinity,
@@ -51,9 +51,9 @@ class MyApp extends StatelessWidget {
                 )
             ],
           ),
+        onGenerateRoute: LocalRouter.Router.generateRoute,
+        initialRoute: listRoute,
       ),
-      onGenerateRoute: LocalRouter.Router.generateRoute,
-      initialRoute: listRoute,
     );
   }
 }
