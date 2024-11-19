@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => LocationListViewModel()),
           ChangeNotifierProvider(create: (context) => LocationDetailsViewModel()),
+          //ChangeNotifierProvider(create: (context) => StudySpaceViewModel(studyspace: )),
         ],
       child: MaterialApp(
       title: 'Pitt Academic Atlas',
