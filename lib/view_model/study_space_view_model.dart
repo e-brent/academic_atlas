@@ -1,6 +1,7 @@
 import 'package:academic_atlas/model/study_space_model.dart';
+import 'package:flutter/cupertino.dart';
 
-class StudySpaceViewModel{
+class StudySpaceViewModel extends ChangeNotifier{
   final StudySpace studyspace;
 
   StudySpaceViewModel({required this.studyspace});

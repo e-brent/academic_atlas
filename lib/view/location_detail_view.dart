@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:provider/provider.dart';
-
+import 'package:academic_atlas/view/update_crowd_view.dart';
 
 
 class LocationDetailsView extends StatefulWidget {
@@ -19,7 +19,23 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
       appBar: AppBar(
           title: Text("Location Details Page")
       ),
-      body: Text("This is a location details page"),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("This is a location details page"),
+            ElevatedButton(
+              onPressed:(){
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const UpdateCrowdView()), );
+            },
+              child:Text("Update Crowd Level"),
+            )
+          ],
+        ),
+      )
+
+
     );
   }
 

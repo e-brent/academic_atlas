@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
-import 'package:academic_atlas/model/study_space_model.dart';
+//import 'package:academic_atlas/model/study_space_model.dart';
 
 class UpdateCrowdView extends StatelessWidget {
   const UpdateCrowdView({super.key});
@@ -40,8 +40,9 @@ class UpdateCrowdView extends StatelessWidget {
                 children: List.generate(
                   viewModel.currentAmenities.length,
                     (index)=> FilterChip(
-                      label: Text(viewModel.currentAmenities[index].amenity),
-                      selected: viewModel.currentAmenities[index].isSelected,
+                      label: Text("option 1, option 2, option 3"),
+                      //Text(viewModel.currentAmenities[index].amenity),
+                      selected: true, //viewModel.currentAmenities[index].isSelected,
                       onSelected: null,
                     )
                 ),
