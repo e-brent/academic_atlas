@@ -20,11 +20,11 @@ class Router{
           )
         );
       case detailsRoute:
-        //var locationID = settings.arguments as String;
+        var locationID = settings.arguments as int;
         return MaterialPageRoute(builder: (_) =>
           ChangeNotifierProvider(
             create: (context) => LocationListViewModel(),
-            child: LocationDetailsView(),
+            child: LocationDetailsView(locationID),
           )
         );
       default:
