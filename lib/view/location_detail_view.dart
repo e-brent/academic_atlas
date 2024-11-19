@@ -23,7 +23,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpaces(widget.locationID);
   }
 
-  String _dropdownvalue ="";
+  String dropdownvalue = "";
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,8 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     final vm = Provider.of<LocationDetailsViewModel>(context);
 
     // Initial Selected Value
-    //_dropdownvalue = vm.studyspaces.first.name;
-
-    var items = vm.getStudySpaceNames(widget.locationID);
+    var items = [""];
+    items.addAll(vm.getStudySpaceNames(widget.locationID));
 
     return Scaffold (
       appBar: AppBar(
@@ -56,7 +55,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
             child: new DropdownButton<String>(
               isDense: true,
               hint: new Text("Select study space"),
-              value: _dropdownvalue,
+              value: dropdownvalue,
               items: items.map((String items) {
                 return DropdownMenuItem(
                   value: items,
@@ -65,7 +64,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
               }).toList(),
               onChanged: (String? newValue) {
                 setState(() {
-                  _dropdownvalue = newValue!;
+                  dropdownvalue = newValue!;
                 });
               },
             ),
