@@ -32,7 +32,7 @@ class LocationList extends StatelessWidget {
           ),
           title: Text(location.name),
           onTap: () {
-            Navigator.pushNamed(context, detailsRoute);
+            Navigator.pushNamed(context, detailsRoute, arguments: location.id);
           }
         );
       },
