@@ -31,11 +31,36 @@ class _LocationListViewState extends State<LocationListView> {
         height: MediaQuery.of(context).size.height,
         child: (Column( children: <Widget> [
           Expanded(
-            child: LocationList(locations: vm.locations)
-          )
+            child: ListView.builder(
+              itemCount: vm.locations.length,
+              itemBuilder: (context,index){
+                final location = vm.locations[index];
+                return Card(
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(
+                        location.image
+                      ),
+                    radius: 25,
+                    ),
+                    title:Text(location.name),
+                    trailing: IconButton(
+                        icon: Icon(Icons.star_border),
+                        onPressed: () {
+                          //add logic here later for DEv-4
+                        },
+                  ),
+                ),
+                );
+              }
+
+
+
+            ),
+          ),
         ])
-        )
-      )
+        ),
+      ),
     );
   }
 }
