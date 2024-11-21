@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:academic_atlas/view/update_crowd_view.dart';
-
 import 'package:provider/provider.dart';
-
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:academic_atlas/widgets/current_amenities_list.dart';
 
@@ -56,7 +54,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Select a study space in building: ${vm.location != null ? vm.location!.name : 'loading...'}"),
-            SizedBox(height: 10),
+            SizedBox(height: 30),
             DropdownButton<String>(
                 isDense: true,
                 hint: Text("Select study space"),
@@ -73,7 +71,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   });
                 },
               ),
-            SizedBox(height:10),
+            SizedBox(height:30),
             Column (
                 children: [
                   Text('Location/study space details...'),
@@ -95,7 +93,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Text("Current Amenities:"),
                   SizedBox(height: 10),
                   CurrAmenitiesList(spaceDetails: vm.studyspaces),
-                  SizedBox(height: 10),
+                  SizedBox(height: 30),
                   Row(
                       children: [
                         // this isn't showing up for some reason idk
