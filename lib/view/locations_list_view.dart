@@ -35,7 +35,11 @@ class _LocationListViewState extends State<LocationListView> {
               itemCount: vm.locations.length,
               itemBuilder: (context,index){
                 final location = vm.locations[index];
-                return Card(
+                return GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context,'/details',arguments:location.id,);
+                },
+                child: Card(
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundImage: AssetImage(
@@ -50,6 +54,7 @@ class _LocationListViewState extends State<LocationListView> {
                           //add logic here later for DEv-4
                         },
                   ),
+                ),
                 ),
                 );
               }
