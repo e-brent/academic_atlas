@@ -25,7 +25,7 @@
 
    **Status: Almost complete**
     * When a user selects a building from the locations list, they are brought to the location details page. From here, they are able to select a specific study space from the dropdown menu to view the crowd level, current amenities, and other information about the building and the space they are in.
-    * We have created the viewmodels required to retrieve the correct data about each study space, and are now just completing the styling to display the data in an aesthetically pleasing and easy to understand format. 
+    * We have created the viewmodels required to retrieve the correct data about each study space, and are now just completing the styling to display the data in an aesthetically pleasing and easy-to-understand format. 
 
     
 3. Update crowd level and available amenities
@@ -38,9 +38,9 @@
 4. Favorite locations and leave reviews
 
    **Status: Mostly not implemented**  
-    * This task was also lower on our priority list, so we have not yet dedicated time to working on it. 
-    * We have included a favorites star on the location list, but it is not connected to the user model and nothing changes when a user presses the button. The user model and a simple user viewmodel have been created, but they have not been connected to any views yet.
-    * Due to teh scope of the project and our priorities, we have not yet implemented any reviewing capabilities. 
+    * This task was also lower on our priority list, so we have not dedicated as much time to working on it. 
+    * We have included a favorites star on the location list. It is a version that allows the user to click on the star, and it updates the       location model. However, if we decide to connect it to our user model, we will have to edit this version. 
+    * Due to the scope of the project and our priorities, we have not yet implemented any reviewing capabilities. 
 
 ## Project changes
 Our project has not meaningfully deviated since DEV-2 in terms of our goals. However, as we have began implementation we have realized that additional viewmodels and widgets are required to efficiently build the pages and connect the views and models. 
