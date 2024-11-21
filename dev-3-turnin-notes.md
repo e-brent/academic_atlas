@@ -38,7 +38,7 @@
 4. Favorite locations and leave reviews
 
    **Status: Mostly not implemented**  
-    * This task was also lower on our priority list, so we have not dedicated as much time to working on it. 
+    * This task was also lower on our priority list, so we have not dedicated as much time to working on it. This is because we think users will benefit more from viewing details about a location and updating the crowd level. The favorite location ad leave reviews is for the more experienced Pitt student.
     * We have included a favorites star on the location list. It is a version that allows the user to click on the star, and it updates the       location model. However, if we decide to connect it to our user model, we will have to edit this version. 
     * Due to the scope of the project and our priorities, we have not yet implemented any reviewing capabilities. 
 
@@ -46,3 +46,5 @@
 Our project has not meaningfully deviated since DEV-2 in terms of our goals. However, as we have began implementation we have realized that additional viewmodels and widgets are required to efficiently build the pages and connect the views and models. 
 
 We have primarily been setting up models, viewmodels, and implementing providers and routing so far, so that the groundwork has been done for us to easily create our views. 
+
+We also are changing the way notifications work in our app. Originally, we wanted to have the application notify users when they are near a location to remind them to update the crowd level. After some thought, we decided that we need to rethink this feature because not all users will appreciate this reminder. We are considering allowing the user to decide whether they would like these reminders or not instead of just assuming they would like them automatically. 
