@@ -97,10 +97,28 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   CurrAmenitiesList(spaceDetails: vm.studyspaces),
                   SizedBox(height: 10),
                   Row(
-                      children: [
+                      children: <Widget>[
                         // this isn't showing up for some reason idk
-                        FractionallySizedBox(widthFactor: .5, child: Container(height: 30, child: Text("Address: ${vm.location != null ? vm.location!.address : 'loading...'}"))),
-                        FractionallySizedBox(widthFactor: .5, child: Container(height: 30, child: Text("Hours: ")))
+                        Expanded(child:
+                          Center(child:
+                              Column(
+                                children: [
+                                  Text("Address:"),
+                                  Text(vm.location != null ? vm.location!.address : 'loading...')
+                                ]
+                              )
+                          )
+                        ),
+                        VerticalDivider(), //idk why this isn't showing up
+                        Expanded(child:
+                          Center(child:
+                            Column(
+                              children: [
+                                Center(child: Text("Hours: "))
+                              ]
+                            )
+                          )
+                        )
                       ]
                   )
                 ]
