@@ -49,12 +49,19 @@ class _LocationListViewState extends State<LocationListView> {
                     ),
                     title:Text(location.name),
                     trailing: IconButton(
-                        icon: Icon(Icons.star_border),
+                        icon: Icon(
+                          location.isFavorite ? Icons.star : Icons.star_border,
+                          color: location.isFavorite ? Colors.yellow : Colors.grey,
+                        ),
                         onPressed: () {
                           //add logic here later for DEv-4
+                          setState(() {
+                            location.setIsFavorite(!location.isFavorite);
+                          });
                         },
+                        ),
+
                   ),
-                ),
                 ),
                 );
               }

@@ -33,6 +33,15 @@ class LocationViewModel{
     return location.coordEW;
   }
 
+  bool get isFavorite{
+    return location.isFavorite;
+  }
+
+  void setIsFavorite(bool isFavorite)
+  {
+    location.isFavorite = isFavorite;
+  }
+
   /*
   List<double> get coordinates {
     return location.coordinates;

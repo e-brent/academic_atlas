@@ -9,8 +9,9 @@ class Location {
   final String image;
   final double coordNS;
   final double coordEW;
+  bool isFavorite;
 
-  Location({required this.id, required this.name, required this.hours, required this.address, required this.image, required this.coordNS, required this.coordEW});
+  Location({required this.id, required this.name, required this.hours, required this.address, required this.image, required this.coordNS, required this.coordEW, this.isFavorite=false,});
 
   factory Location.fromJson(Map<String, dynamic> json) {
     return Location(
