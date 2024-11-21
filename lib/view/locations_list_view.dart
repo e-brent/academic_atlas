@@ -61,9 +61,9 @@ class _LocationListViewState extends State<LocationListView> {
                         },
                         ),
 
-                  ),
                     tileColor: Colors.purple.shade50,
                     selectedTileColor: Colors.deepPurple.shade100,
+                  ),
                 ),
                 );
               }
