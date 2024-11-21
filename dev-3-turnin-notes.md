@@ -38,7 +38,7 @@
 4. Favorite locations and leave reviews
 
    **Status: Mostly not implemented**  
-    * This task was also lower on our priority list, so we have not dedicated as much time to working on it. This is because we think users will benefit more from viewing details about a location and updating the crowd level. The favorite location ad leave reviews is for the more experienced Pitt student.
+    * This task was also lower on our priority list, so we have not dedicated as much time to working on it. This is because we think users will benefit more from viewing details about a location and updating the crowd level. The favorite location and leave reviews is for the more experienced Pitt student.
     * We have included a favorites star on the location list. It is a version that allows the user to click on the star, and it updates the       location model. However, if we decide to connect it to our user model, we will have to edit this version. 
     * Due to the scope of the project and our priorities, we have not yet implemented any reviewing capabilities. 
 
