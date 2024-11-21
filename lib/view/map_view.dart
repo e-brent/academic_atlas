@@ -17,7 +17,22 @@ class _MapViewState extends State<MapView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pitt Campus Map"),
+        title: const Text("Pitt Academic Atlas"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              // stretch goal .. implement if have time (Dev-4)
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.filter_alt),
+            onPressed: () {
+              // stretch goal .. implement if have time (DEV_4)
+            },
+          ),
+        ],
+
       ),
         body: Container(
           width: double.infinity,
