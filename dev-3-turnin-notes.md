@@ -23,21 +23,21 @@
 
 2. View details about a location
 
-**Status: Almost complete**
-    * When a user selects a building from the locations list, they are brought to the location details page. From here, they are able to select a specific study space from the dropdown menu to view the crowd level, current amenities, and other information about the building and the space they are in. 
+   **Status: Almost complete**
+    * When a user selects a building from the locations list, they are brought to the location details page. From here, they are able to select a specific study space from the dropdown menu to view the crowd level, current amenities, and other information about the building and the space they are in.
     * We have created the viewmodels required to retrieve the correct data about each study space, and are now just completing the styling to display the data in an aesthetically pleasing and easy to understand format. 
 
     
 3. Update crowd level and available amenities
 
-**Status: Almost complete**
+   **Status: Almost complete**  
     * From the location details page, a user can select the "Update Crowd" button at the bottom of the screen, and from there they will be taken to the form where they can update the crowd level using a slider and select additional information about the current state of a study space.
     * This page is visually complete, but we still have to connect the view model and router to update the study space model and take the user back to the location details page when they press the submit button. 
 
 
 4. Favorite locations and leave reviews
 
-**Status: Mostly not implemented**
+   **Status: Mostly not implemented**  
     * This task was also lower on our priority list, so we have not yet dedicated time to working on it. 
     * We have included a favorites star on the location list, but it is not connected to the user model and nothing changes when a user presses the button. The user model and a simple user viewmodel have been created, but they have not been connected to any views yet.
     * Due to teh scope of the project and our priorities, we have not yet implemented any reviewing capabilities. 
