@@ -23,7 +23,7 @@ class _LocationListViewState extends State<LocationListView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Locations List")
+        title: Text("Locations List", style: Theme.of(context).textTheme.titleMedium)
       ),
       body: Container(
         padding: EdgeInsets.all(10),
@@ -62,6 +62,8 @@ class _LocationListViewState extends State<LocationListView> {
                         ),
 
                   ),
+                    tileColor: Colors.purple.shade50,
+                    selectedTileColor: Colors.deepPurple.shade100,
                 ),
                 );
               }

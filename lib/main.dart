@@ -1,6 +1,7 @@
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'router.dart' as LocalRouter;
 import 'constants.dart';
@@ -37,9 +38,16 @@ class MyApp extends StatelessWidget {
         // To invoke "hot reload" (save your changes or press the "hot
         // reload" button in a Flutter-supported IDE, or press "r" if you used
         // the command line to start the app)
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, brightness: Brightness.light),
+        textTheme: TextTheme(
+          titleLarge: GoogleFonts.oswald(
+            fontSize: 30,
+          ),
+          titleMedium: GoogleFonts.oswald(
+            fontSize: 20
+          )
+        )
       ),
             home:Column(
             children: [
