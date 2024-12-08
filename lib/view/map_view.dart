@@ -41,8 +41,8 @@ class _MapViewState extends State<MapView> {
           height: 600,
           child: FlutterMap(
             options: MapOptions(
-              center: LatLng(40.4440, -79.9605), // Center the map over Pitt's campus
-              zoom: 14,
+              center: LatLng(40.4426, -79.9564), // Center the map over Pitt's campus
+              zoom: 16,
           ),
           children: [
             TileLayer( // Display map tiles from any source
@@ -53,14 +53,14 @@ class _MapViewState extends State<MapView> {
             MarkerLayer(
                 markers:[
                   Marker(
-                    point: LatLng(40.4440, -79.9532), // Cathedral of Learning
+                    point: LatLng(40.4440, -79.9532), // Towers
                     width: 40,
                     height: 40,
                     builder: (ctx) => const Icon(
                       Icons.location_on,
                       color: Colors.red,
                       size: 30,
-                    ),
+                    )
                   ),
                   Marker(
                     point: LatLng(40.4425, -79.9572), // Hillman Library

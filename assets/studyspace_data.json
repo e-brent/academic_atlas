@@ -111,6 +111,174 @@
           "amenity": "Small tables"
         }
       ]
+    },
+    {
+      "id": 4,
+      "name": "Cathedral Commons",
+      "location": 2,
+      "crowdLevel": 7.00,
+      "currentAmenities": [
+        {
+          "amenity": "not quiet"
+        },
+        {
+          "amenity": "service dogs here"
+        },
+        {
+          "amenity": "crowded"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Uncomfortable seating"
+        },
+        {
+          "amenity": "Not great lighting"
+        },
+        {
+          "amenity": "No restrooms on floor"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Honors College, Floor 36",
+      "location": 2,
+      "crowdLevel": 4.00,
+      "currentAmenities": [
+        {
+          "amenity": "quiet"
+        },
+        {
+          "amenity": "small tables open"
+        },
+        {
+          "amenity": "free coffee"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Quiet space"
+        },
+        {
+          "amenity": "Good views"
+        },
+        {
+          "amenity": "Limited seating"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Floor 2",
+      "location": 3,
+      "crowdLevel": 6.00,
+      "currentAmenities": [
+        {
+          "amenity": "High top tables free"
+        },
+        {
+          "amenity": "Medium noise"
+        },
+        {
+          "amenity": "Women's restroom is gross"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Outlets"
+        },
+        {
+          "amenity": "Restrooms"
+        },
+        {
+          "amenity": "Variety of table sizes"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Moye Lab",
+      "location": 3,
+      "crowdLevel": 8.00,
+      "currentAmenities": [
+        {
+          "amenity": "office hours happening"
+        },
+        {
+          "amenity": "loud"
+        },
+        {
+          "amenity": "really warm"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Outlets"
+        },
+        {
+          "amenity": "Comfortable Seats"
+        },
+        {
+          "amenity": "Small tables"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Floor 1",
+      "location": 4,
+      "crowdLevel": 6.00,
+      "currentAmenities": [
+        {
+          "amenity": "empty tables"
+        },
+        {
+          "amenity": "quiet"
+        },
+        {
+          "amenity": "outlets taken"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "No restrooms on floor"
+        },
+        {
+          "amenity": "Good lighting"
+        },
+        {
+          "amenity": "Small tables"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "?????",
+      "location": 5,
+      "crowdLevel": 1.00,
+      "currentAmenities": [
+        {
+          "amenity": "no seating"
+        },
+        {
+          "amenity": "tours being loud"
+        },
+        {
+          "amenity": "broken outlets"
+        }
+      ],
+      "generalAmenities": [
+        {
+          "amenity": "Outlets"
+        },
+        {
+          "amenity": "Good lighting"
+        },
+        {
+          "amenity": "Small tables"
+        }
+      ]
     }
   ]
 }
