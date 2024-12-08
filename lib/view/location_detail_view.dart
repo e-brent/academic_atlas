@@ -64,7 +64,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
               width: 350,
               fit: BoxFit.cover,),
             SizedBox(height:30),
-            Text("Select a study space in building: ${vm.location != null ? vm.location!.name : 'loading...'}"),
+            Text("Select a study space in building: ${vm.location != null ? vm.location!.name : 'loading...'}",style: TextStyle(fontStyle: FontStyle.italic),),
             SizedBox(height: 30),
             DropdownButton<String>(
                 isDense: true,
@@ -84,10 +84,14 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                 },
               ),
             SizedBox(height:40),
+            SizedBox(height:20),
             Column (
                 children: [
-                  Text('Location/study space details:',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                  SizedBox(height:20),
+                  Text('Location/study space details:',style: TextStyle(decoration:TextDecoration.underline, fontSize: 24, fontWeight: FontWeight.bold),),
+                  SizedBox(height:30),
+                  Text("Current Crowd Level: 7",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   Slider(
                     value: 7,//viewModel.crowdLevel,
                     //value: vm.studyspace.crowedLevel != null ? vm.studyspace!.crowdLevel : 0,//viewModel.crowdLevel,
@@ -99,10 +103,15 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                       //viewModel.crowdLevel(value);
                     },
                   ),
-                  Text("Crowd Level: 7",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                  SizedBox(height:20),
+                  const Divider(
+                    height: 20,
+                    thickness: 2,
+                    indent: 30,
+                    endIndent: 30,
+                    color: Colors.grey,
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   Text("Current Amenities:",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
@@ -111,6 +120,13 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     height: 215,
                     width: 500,
                     child: CurrAmenitiesList(studySpaceID),
+                  ),
+                  const Divider(
+                    height: 20,
+                    thickness: 2,
+                    indent: 30,
+                    endIndent: 30,
+                    color: Colors.grey,
                   ),
                   SizedBox(height: 30),
                   Row(
@@ -140,12 +156,27 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                       ]
                   ),
                   SizedBox(height: 40),
+                  const Divider(
+                    height: 20,
+                    thickness: 2,
+                    indent: 30,
+                    endIndent: 30,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(height: 10),
                   Text("Building Amenities:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                   SizedBox(height: 10),
                   Container(
                     height: 215,
                     width: 500,
                     child: StaticAmenitiesList(studySpaceID),
+                  ),
+                  const Divider(
+                    height: 20,
+                    thickness: 2,
+                    indent: 30,
+                    endIndent: 30,
+                    color: Colors.grey,
                   ),
                   SizedBox(height: 20),
                   Text("Reviews:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
