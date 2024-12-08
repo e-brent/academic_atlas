@@ -45,28 +45,28 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[100],
-            child: const Text('no outlets'),
+            color: Colors.deepPurple.shade100,
+            child: const Text('no outlets',textAlign: TextAlign.center,),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[200],
-            child: const Text('small tables only'),
+            color: Colors.deepPurple.shade100,
+            child: const Text('small tables only',textAlign: TextAlign.center,),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[300],
-            child: const Text('loud'),
+            color:Colors.deepPurple.shade100,
+            child: const Text('loud',textAlign: TextAlign.center,),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[400],
-            child: const Text('too much construction noise'),
+            color: Colors.deepPurple.shade100,
+            child: const Text('too much construction noise',textAlign: TextAlign.center,),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[500],
-            child: const Text('some medium tables'),
+            color: Colors.deepPurple.shade100,
+            child: const Text('some medium tables',textAlign: TextAlign.center,),
           ),
         ],
     );
