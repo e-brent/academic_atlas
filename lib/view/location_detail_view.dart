@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:academic_atlas/widgets/current_amenities_list.dart';
 import 'package:academic_atlas/widgets/static_amenities_list.dart';
-
+import 'dart:developer';
 
 class LocationDetailsView extends StatefulWidget {
   final int locationID;
@@ -33,6 +33,9 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     // Initial Selected Value
     var items = [""];
     items.addAll(vm.getStudySpaceNames(widget.locationID));
+
+    log(widget.locationID.toString());
+    log(items.toString());
 
     var studySpaceID = 0;
 

@@ -41,7 +41,8 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
       padding: const EdgeInsets.all(20),
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      crossAxisCount: 4,
+      crossAxisCount: 3,
+        childAspectRatio: (5/3),
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(8),
