@@ -3,7 +3,7 @@
     {
       "id": 0,
       "name": "Hillman Library",
-      "hours": "Monday: 12:00am - 11:59pm\nTuesday: 12:00am - 11:59pm\nWednesday: 12:00am - 11:59pm\nThursday: 12:00am - 11:59pm\nFriday:12:00am - 10:00pm\nSaturday: 10:00am - 10:00pm\nSunday: 10:00am - 11:59pm",
+      "hours": "Mon: 12:00am - 11:59pm\nTue: 12:00am - 11:59pm\nWed: 12:00am - 11:59pm\nThu: 12:00am - 11:59pm\nFri:12:00am - 10:00pm\nSat: 10:00am - 10:00pm\nSun: 10:00am - 11:59pm",
       "address": "3960 Forbes Ave., Pittsburgh, PA 15260",
       "image": "assets/hillman.jpg",
       "coordNS": 40.442583,
@@ -13,7 +13,7 @@
     {
       "id": 1,
       "name": "Posvar Hall",
-      "hours": "Monday: 7:00am - 10:00pm\nTuesday: 7:00am - 10:00pm\nWednesday: 7:00am - 10:00pm\nThursday: 7:00am - 10:00pm\nFriday: 7:00am - 10:00pm\nSaturday: 8:00am - 8:00pm\nSunday: 8:00am - 8:00pm",
+      "hours": "Mon: 7:00am - 10:00pm\nTue: 7:00am - 10:00pm\nWed: 7:00am - 10:00pm\nThu: 7:00am - 10:00pm\nFri: 7:00am - 10:00pm\nSat: 8:00am - 8:00pm\nSun: 8:00am - 8:00pm",
       "address": "230 S Bouquet St., Pittsburgh, PA 15213",
       "image": "assets/posvar.jpg",
       "coordNS": 40.441648,
@@ -22,7 +22,7 @@
     {
       "id": 2,
       "name": "Cathedral of Learning",
-      "hours": "Monday: 7:00am - 10:00pm\nTuesday: 7:00am - 10:00pm\nWednesday: 7:00am - 10:00pm\nThursday: 7:00am - 10:00pm\nFriday: 7:00am - 10:00pm\nSaturday: 8:00am - 8:00pm\nSunday: 8:00am - 8:00pm",
+      "hours": "Mon: 7:00am - 10:00pm\nTue: 7:00am - 10:00pm\nWed: 7:00am - 10:00pm\nThu: 7:00am - 10:00pm\nFri: 7:00am - 10:00pm\nSat: 8:00am - 8:00pm\nSun: 8:00am - 8:00pm",
       "address": "4200 Fifth Ave, Pittsburgh, PA 15260",
       "image": "assets/cathy.jpg",
       "coordNS": 40.44417,
@@ -31,7 +31,7 @@
     {
       "id": 3,
       "name": "Sennott Square",
-      "hours": "Monday: 7:00am - 10:00pm\nTuesday: 7:00am - 10:00pm\nWednesday: 7:00am - 10:00pm\nThursday: 7:00am - 10:00pm\nFriday: 7:00am - 10:00pm\nSaturday: closed \nSunday: closed",
+      "hours": "Monday: 7:00am - 10:00pm\nTuesday: 7:00am - 10:00pm\nWednesday: 7:00am - 10:00pm\nThursday: 7:00am - 10:00pm\nFriday: 7:00am - 10:00pm\nSat: closed \nSun: closed",
       "address": "3810 Forbes Ave, Pittsburgh, PA 15213",
       "image": "assets/Sennott_Square.jpg",
       "coordNS": 40.441648,
@@ -40,7 +40,7 @@
     {
       "id": 4,
       "name": "Lawrence Hall",
-      "hours": "Monday: 7:00am - 10:00pm\nTuesday: 7:00am - 10:00pm\nWednesday: 7:00am - 10:00pm\nThursday: 7:00am - 10:00pm\nFriday: 7:00am - 10:00pm\nSaturday: 8:00am - 10:00pm\nSunday: closed",
+      "hours": "Mon: 7:00am - 10:00pm\nTue: 7:00am - 10:00pm\nWed: 7:00am - 10:00pm\nThu: 7:00am - 10:00pm\nFri: 7:00am - 10:00pm\nSat: 8:00am - 10:00pm\nSun: closed",
       "address": "3942 Forbes Ave, Pittsburgh, PA 15260",
       "image": "assets/Lawrence.jpg",
       "coordNS": 40.441648,
@@ -49,7 +49,7 @@
     {
       "id": 5,
       "name": "The William Pitt Union",
-      "hours": "Monday: 8:00am - 10:00pm\nTuesday: 8:00am - 10:00pm\nWednesday: 8:00am - 10:00pm\nThursday: 8:00am - 10:00pm\nFriday: 8:00am - 10:00pm\nSaturday: 8:00am - 8:00pm\nSunday: 8:00am - 8:00pm",
+      "hours": "Mon: 8:00am - 10:00pm\nTue: 8:00am - 10:00pm\nWed: 8:00am - 10:00pm\nThu: 8:00am - 10:00pm\nFri: 8:00am - 10:00pm\nSat: 8:00am - 8:00pm\nSun: 8:00am - 8:00pm",
       "address": "3959 Fifth Ave, Pittsburgh, PA 15260",
       "image": "assets/wpu.jpeg",
       "coordNS": 40.441648,
@@ -58,7 +58,7 @@
     {
       "id": 6,
       "name": "Benedum Hall",
-      "hours": "Monday: 7:00am - 10:00pm\nTuesday: 7:00am - 10:00pm\nWednesday: 7:00am - 10:00pm\nThursday: 7:00am - 10:00pm\nFriday: 7:00am - 10:00pm\nSaturday: 8:00am - 8:00pm\nSunday: 8:00am - 10:00pm",
+      "hours": "Mon: 7:00am - 10:00pm\nTue: 7:00am - 10:00pm\nWed: 7:00am - 10:00pm\nThu: 7:00am - 10:00pm\nFri: 7:00am - 10:00pm\nSat: 8:00am - 8:00pm\nSun: 8:00am - 10:00pm",
       "address": "3700 O'Hara St, Pittsburgh, PA 152130",
       "image": "assets/benedum.jpg",
       "coordNS": 40.441648,
@@ -67,7 +67,7 @@
     {
       "id": 7,
       "name": "Alumni Hall",
-      "hours": "Monday: 8:00am - 10:00pm\nTuesday: 8:00am - 10:00pm\nWednesday: 8:00am - 10:00pm\nThursday: 8:00am - 10:00pm\nFriday: 8:00am - 10:00pm\nSaturday: 8:00am - 8:00pm\nSunday: 8:00am - 8:00pm",
+      "hours": "Mon: 8:00am - 10:00pm\nTue: 8:00am - 10:00pm\nWed: 8:00am - 10:00pm\nThu: 8:00am - 10:00pm\nFri: 8:00am - 10:00pm\nSat: 8:00am - 8:00pm\nSun: 8:00am - 8:00pm",
       "address": "4227 Fifth Ave, Pittsburgh, PA 15260",
       "image": "assets/alumni.jpg",
       "coordNS": 40.441648,

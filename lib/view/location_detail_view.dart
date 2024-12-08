@@ -86,7 +86,8 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
             SizedBox(height:40),
             Column (
                 children: [
-                  Text('Location/study space details...'),
+                  Text('Location/study space details:',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                  SizedBox(height:20),
                   Slider(
                     value: 7,//viewModel.crowdLevel,
                     //value: vm.studyspace.crowedLevel != null ? vm.studyspace!.crowdLevel : 0,//viewModel.crowdLevel,
@@ -99,13 +100,15 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     },
                   ),
                   Text("Crowd Level: 7",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                   ),
                   SizedBox(height: 30),
-                  Text("Current Amenities:"),
+                  Text("Current Amenities:",
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   SizedBox(height: 10),
                   Container(
-                    height: 400,
+                    height: 215,
                     width: 500,
                     child: CurrAmenitiesList(studySpaceID),
                   ),
@@ -117,7 +120,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                           Center(child:
                               Column(
                                 children: [
-                                  Text("Address:"),
+                                  Text("Address:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                                   Text(vm.location != null ? vm.location!.address : 'loading...')
                                 ]
                               )
@@ -127,23 +130,26 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                         Expanded(child:
                           Center(child:
                             Column(
-                              children: [
-                                Center(child: Text("Hours: "))
+                                children: [
+                                  Text("Hours:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                                  Text(vm.location != null ? vm.location!.hours : 'loading...')
                               ]
                             )
                           )
                         )
                       ]
                   ),
-                  SizedBox(height: 30),
-                  Text("Building Amenities:"),
+                  SizedBox(height: 40),
+                  Text("Building Amenities:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                   SizedBox(height: 10),
                   Container(
-                    height: 400,
+                    height: 215,
                     width: 500,
                     child: StaticAmenitiesList(studySpaceID),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
+                  Text("Reviews:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                  SizedBox(height: 40),
                 ]
             )
           ],
