@@ -73,7 +73,57 @@ class _MapViewState extends State<MapView> {
                     ),
                   ),
                   Marker(
-                    point: LatLng(40.4451, -79.9552), // Petersen Events Center
+                    point: LatLng(40.4414, -79.9560), //  Sennott
+                    width: 40,
+                    height: 40,
+                    builder: (ctx) => const Icon(
+                      Icons.location_on,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                  ),
+                  Marker(
+                    point: LatLng(40.4423, -79.9553), //Lawrence Hall
+                    width: 40,
+                    height: 40,
+                    builder: (ctx) => const Icon(
+                      Icons.location_on,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                  ),
+                  Marker(
+                    point: LatLng(40.4436, -79.9545), //wpu
+                    width: 40,
+                    height: 40,
+                    builder: (ctx) => const Icon(
+                      Icons.location_on,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                  ),
+                  Marker(
+                    point: LatLng(40.4438, -79.9584), //benedum
+                    width: 40,
+                    height: 40,
+                    builder: (ctx) => const Icon(
+                      Icons.location_on,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                  ),
+                  Marker(
+                    point: LatLng(40.4453, -79.9540), //alumni
+                    width: 40,
+                    height: 40,
+                    builder: (ctx) => const Icon(
+                      Icons.location_on,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                  ),
+                  Marker(
+                    point: LatLng(40.4416, -79.9537), // Posvar Hall
                     width: 40,
                     height: 40,
                     builder: (ctx) => const Icon(

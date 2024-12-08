@@ -52,7 +52,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
           )
       ),
 
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
