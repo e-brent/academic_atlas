@@ -49,7 +49,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
           )
       ),
 
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -98,7 +98,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Text("Current Amenities:"),
                   SizedBox(height: 10),
                   CurrAmenitiesList(spaceDetails: vm.studyspaces),
-                  SizedBox(height: 30),
+                  SizedBox(height: 40),
                   Row(
                       children: <Widget>[
                         // this isn't showing up for some reason idk
@@ -124,6 +124,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                         )
                       ]
                   )
+                  ,SizedBox(height: 30),
                 ]
             )
           ],
