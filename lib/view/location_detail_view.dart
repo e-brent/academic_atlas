@@ -3,10 +3,11 @@ import 'package:academic_atlas/view/update_crowd_view.dart';
 import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:academic_atlas/widgets/current_amenities_list.dart';
+import 'package:academic_atlas/widgets/static_amenities_list.dart';
+
 
 class LocationDetailsView extends StatefulWidget {
   final int locationID;
-
   LocationDetailsView(this.locationID);
 
   @override
@@ -32,6 +33,8 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     // Initial Selected Value
     var items = [""];
     items.addAll(vm.getStudySpaceNames(widget.locationID));
+
+    var studySpaceID = 0;
 
     return Scaffold (
       appBar: AppBar(
@@ -74,6 +77,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   setState(() {
                     dropdownvalue = newValue!;
                   });
+                  studySpaceID = items.indexOf(dropdownvalue) - 1;
                 },
               ),
             SizedBox(height:40),
@@ -97,8 +101,12 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   SizedBox(height: 30),
                   Text("Current Amenities:"),
                   SizedBox(height: 10),
-                  CurrAmenitiesList(spaceDetails: vm.studyspaces),
-                  SizedBox(height: 40),
+                  Container(
+                    height: 400,
+                    width: 500,
+                    child: CurrAmenitiesList(studySpaceID),
+                  ),
+                  SizedBox(height: 30),
                   Row(
                       children: <Widget>[
                         // this isn't showing up for some reason idk
@@ -123,8 +131,16 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                           )
                         )
                       ]
-                  )
-                  ,SizedBox(height: 30),
+                  ),
+                  SizedBox(height: 30),
+                  Text("Building Amenities:"),
+                  SizedBox(height: 10),
+                  Container(
+                    height: 400,
+                    width: 500,
+                    child: StaticAmenitiesList(studySpaceID),
+                  ),
+                  SizedBox(height: 30),
                 ]
             )
           ],
