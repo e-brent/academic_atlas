@@ -25,11 +25,25 @@ class LocationDetailsViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
+  Future<void> fetchStudySpace(int id) async {
+    final results = await Dataservice().fetchStudySpace(id);
+
+    studySpace = StudySpaceViewModel(studyspace: results);
+  }
+
   List<String> getStudySpaceNames(int id) {
     List<String> spaceNames = [];
     for (studySpace in studyspaces){
       spaceNames.add(studySpace!.name);
     }
     return spaceNames;
+  }
+
+  List<int> getStudySpaceIds(int id) {
+    List<int> spaceIds = [];
+    for (studySpace in studyspaces){
+      spaceIds.add(studySpace!.id);
+    }
+    return spaceIds;
   }
 }

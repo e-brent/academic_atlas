@@ -9,16 +9,16 @@ import 'dart:developer';
 import 'package:academic_atlas/router.dart' as LocalRouter;
 import 'package:academic_atlas/constants.dart';
 
-class CurrAmenitiesList extends StatefulWidget {
+class StaticAmenitiesList extends StatefulWidget {
   final int studySpaceID;
 
-  CurrAmenitiesList(this.studySpaceID);
+  StaticAmenitiesList(this.studySpaceID);
 
   @override
-  State<CurrAmenitiesList> createState() => _CurrAmenitiesListState();
+  State<StaticAmenitiesList> createState() => _StaticAmenitiesListState();
 }
 
-class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
+class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
 
   @override
   void initState() {
@@ -31,8 +31,8 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
   Widget build(BuildContext context) {
     final vm = Provider.of<LocationDetailsViewModel>(context);
 
-    var currAmenities = [];
-    currAmenities.addAll(vm.studySpace!.currentAmenities);
+    var staticAmenities = [];
+    staticAmenities.addAll(vm.studySpace!.currentAmenities);
 
     //log(currAmenities.toString());
 
