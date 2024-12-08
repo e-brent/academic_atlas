@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 width:double.infinity,
-                height: 500,
+                height: 425,
                 child:MapView(),
               ),
               Expanded(
