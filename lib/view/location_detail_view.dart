@@ -53,6 +53,11 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset(vm.location!.image,
+              height: 250,
+              width: 350,
+              fit: BoxFit.cover,),
+            SizedBox(height:30),
             Text("Select a study space in building: ${vm.location != null ? vm.location!.name : 'loading...'}"),
             SizedBox(height: 30),
             DropdownButton<String>(
@@ -71,7 +76,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   });
                 },
               ),
-            SizedBox(height:30),
+            SizedBox(height:40),
             Column (
                 children: [
                   Text('Location/study space details...'),
@@ -89,7 +94,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Text("Crowd Level: 7",
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 30),
                   Text("Current Amenities:"),
                   SizedBox(height: 10),
                   CurrAmenitiesList(spaceDetails: vm.studyspaces),
