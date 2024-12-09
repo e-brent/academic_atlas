@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:academic_atlas/view/filter_view.dart';
 
 class MapView extends StatefulWidget {
   const MapView({super.key});
@@ -28,6 +29,8 @@ class _MapViewState extends State<MapView> {
           IconButton(
             icon: const Icon(Icons.filter_alt),
             onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const FilterView()), );
               // stretch goal .. implement if have time (DEV_4)
             },
           ),
