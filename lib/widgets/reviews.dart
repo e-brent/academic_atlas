@@ -25,9 +25,7 @@ class _ReviewsState extends State<Reviews> {
   void initState() {
     super.initState();
     // Fetch initial reviews
-    final vm = Provider.of<LocationDetailsViewModel>(context, listen: false);
-    vm.fetchStudySpace(widget.studySpaceID);
-    reviews = vm.studySpace?.reviews ?? [];
+
   }
 
   void addReview(String name, String content) {
@@ -38,6 +36,10 @@ class _ReviewsState extends State<Reviews> {
 
   @override
   Widget build(BuildContext context) {
+    final vm = Provider.of<LocationDetailsViewModel>(context, listen: false);
+    vm.fetchStudySpace(widget.studySpaceID);
+    //reviews = vm.studySpace?.reviews ?? [];
+    reviews = vm.studyspaces[widget.studySpaceID].reviews ?? [];
     return GridView.builder(
       padding: const EdgeInsets.all(20),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
