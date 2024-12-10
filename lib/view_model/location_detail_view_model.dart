@@ -70,4 +70,18 @@ class LocationDetailsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<String> getCurrentAmenities(int id) {
+    //String log = studyspaces[id].currentAmenities[0].amenity;
+    //return log;
+    return studyspaces[id].currentAmenities.map((amenity) => amenity.amenity).toList();
+  }
+
+  void setCurrentAmenities(int id, List<String> newAmenities) {
+    for (int i = 0; i < newAmenities.length; i++){
+      studyspaces[id].setCurrentAmenities(newAmenities[i]);
+    }
+
+    notifyListeners();
+  }
+
 }
