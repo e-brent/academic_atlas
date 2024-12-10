@@ -186,7 +186,44 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     width: 500,
                     child: Reviews(studySpaceID),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 30),
+                  Text("Leave a Review:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                  SizedBox(height: 20),
+                  Column(
+                    children: [
+                      Container(
+                        width: 375,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'Enter your name',
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        width: 375,
+                        child: TextField(
+                          maxLines: null,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'Write your review here',
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      ElevatedButton(
+                        onPressed: () {
+                          // make review go to the widget somehow ugh
+                        },
+                        child: Text('Submit'),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(300, 50),
+                        ),
+                      ),
+                      SizedBox(height: 50),
+                    ],
+                  )
                 ]
             )
           ],

@@ -51,7 +51,7 @@ class _LocationListViewState extends State<LocationListView> {
                     trailing: IconButton(
                         icon: Icon(
                           location.isFavorite ? Icons.star : Icons.star_border,
-                          color: location.isFavorite ? Colors.yellow : Colors.grey,
+                          color: location.isFavorite ? Colors.purple : Colors.grey,
                         ),
                         onPressed: () {
                           //add logic here later for DEv-4
