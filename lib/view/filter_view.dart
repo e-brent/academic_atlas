@@ -101,7 +101,7 @@ class _FilterViewState extends State<FilterView> {
                     ),
                   );
                 },
-                child: const Text("Submit"),
+                child: const Text("Filter"),
               ),
             ),
           ],

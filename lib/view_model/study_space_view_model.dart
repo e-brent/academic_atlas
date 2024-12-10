@@ -38,4 +38,8 @@ class StudySpaceViewModel extends ChangeNotifier{
   List<Amenities> get generalAmenities{
     return studyspace.generalAmenities;
   }
+
+  List<Amenities> get reviews{
+    return studyspace.generalAmenities;
+  }
 }
