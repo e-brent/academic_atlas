@@ -23,7 +23,7 @@ class StudySpaceViewModel extends ChangeNotifier{
   }
 
   set crowdLevel(double crowd){
-    crowdLevel = (crowdLevel + crowd)/2;
+    studyspace.crowdLevel = crowd;
   }
 
   List<Amenities> get currentAmenities{

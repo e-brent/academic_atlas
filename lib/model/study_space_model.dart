@@ -17,7 +17,7 @@ class StudySpace {
   final int id;
   final String name;
   final int location;
-  final double crowdLevel;
+  double crowdLevel;
   final List<Amenities> currentAmenities;
   final List<Amenities> generalAmenities;
 

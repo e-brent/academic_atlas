@@ -1,17 +1,33 @@
+import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 //import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
 //import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:intl/intl.dart';
+import 'dart:developer';
+
+import 'package:academic_atlas/router.dart' as LocalRouter;
+import 'package:academic_atlas/constants.dart';
 
 class UpdateCrowdView extends StatefulWidget {
-  const UpdateCrowdView({super.key});
+
+  final int locationID;
+  final int studySpaceID;
+  const UpdateCrowdView(this.locationID, this.studySpaceID, {super.key});
 
   @override
   _UpdateCrowdViewState createState() => _UpdateCrowdViewState();
 }
 
 class _UpdateCrowdViewState extends State<UpdateCrowdView> {
+
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<LocationDetailsViewModel>(context, listen: false);
+  }
+
   double _sliderValue = 5.0;
   List<bool> _chipSelections = List.generate(8, (index) => false);
 
@@ -24,6 +40,15 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
 @override
   Widget build(BuildContext context) {
     //final viewModel = Provider.of<StudySpaceViewModel>(context);
+
+    final vm = Provider.of<LocationDetailsViewModel>(context);
+    //log(vm.toString());
+    //log(widget.studySpaceID);
+
+    String currCrowd = "Current crowd: ${vm.getCrowdLevel(widget.studySpaceID).toString()}";
+    String idlog = "SS ID: ${widget.studySpaceID.toString()}";
+
+    log(idlog);
 
     return Scaffold (
       appBar: AppBar(
@@ -45,6 +70,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
               ),
             ),
             const SizedBox(height: 50),
+            Text(currCrowd),
             const Text(
               "How Crowded is it? ",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -60,6 +86,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
                   _sliderValue=value;
                 });
                 //viewModel.crowdLevel(value);
+
               },
             ),
             Text("Crowd Level: ${_sliderValue.toStringAsFixed(0)}",
@@ -93,6 +120,10 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
+
+                    vm.setCrowdLevel(widget.studySpaceID, _sliderValue);
+
+                    Navigator.pushNamed(context, detailsRoute, arguments: vm.location!.id);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Info Submitted!")),

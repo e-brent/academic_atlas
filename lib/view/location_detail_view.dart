@@ -25,6 +25,8 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
   }
 
   String dropdownvalue = "";
+  var studySpaceID = 0;
+  var localStudySpace = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +36,24 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     // Initial Selected Value
     var items = [""];
     items.addAll(vm.getStudySpaceNames(widget.locationID));
+    log("items length: ${items.length.toString()}");
 
-    log(widget.locationID.toString());
-    log(items.toString());
+    var ids = [1000];
+    ids.addAll(vm.getStudySpaceIds(widget.locationID));
+    log("ids length: ${ids.length.toString()}");
 
-    var studySpaceID = 0;
+    log("study spaces: ${vm.studyspaces.toString()}");
+
+    Map<int, String> idNamePairs = {};
+    Map<int, String> nameOrder = {};
+
+    for (int i = 1; i < ids.length; i++){
+      idNamePairs[ids[i]] = items[i];
+      nameOrder[i- 1] = items[i];
+    }
+
+    //log(widget.locationID.toString());
+    log(idNamePairs.toString());
 
     return Scaffold (
       appBar: AppBar(
@@ -50,7 +65,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
           child: ElevatedButton(
             onPressed:(){
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const UpdateCrowdView()), );
+                MaterialPageRoute(builder: (context) => UpdateCrowdView(vm.location!.id, studySpaceID)));
             },
             child:Text("Update Crowd Level"),
           )
@@ -65,7 +80,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
               width: 350,
               fit: BoxFit.cover,),
             SizedBox(height:30),
-            Text("Select a study space in building: ${vm.location != null ? vm.location!.name : 'loading...'}",style: TextStyle(fontStyle: FontStyle.italic),),
+            Text("Select a study space in building: ${vm.location}",style: TextStyle(fontStyle: FontStyle.italic),),
             SizedBox(height: 30),
             DropdownButton<String>(
                 isDense: false,
@@ -81,7 +96,12 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   setState(() {
                     dropdownvalue = newValue!;
                   });
-                  studySpaceID = items.indexOf(dropdownvalue) - 1;
+                  //studySpaceID = items.indexOf(dropdownvalue) - 1;
+                  //studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                  localStudySpace = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                  studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
+
+                  log("here ${studySpaceID.toString()}");
                 },
               ),
             SizedBox(height:40),
@@ -90,11 +110,12 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                 children: [
                   Text('Location/study space details:',style: TextStyle(decoration:TextDecoration.underline, fontSize: 24, fontWeight: FontWeight.bold),),
                   SizedBox(height:30),
-                  Text("Current Crowd Level: 7",
+                  Text("Current Crowd Level: ${vm.studyspaces[localStudySpace].crowdLevel.toString()}",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Slider(
-                    value: 7,//viewModel.crowdLevel,
+                    value: vm.studyspaces[localStudySpace].crowdLevel,
+                    //value: 7,//viewModel.crowdLevel,
                     //value: vm.studyspace.crowedLevel != null ? vm.studyspace!.crowdLevel : 0,//viewModel.crowdLevel,
                     min:0,
                     max:10,
@@ -138,7 +159,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                               Column(
                                 children: [
                                   Text("Address:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                                  Text(vm.location != null ? vm.location!.address : 'loading...')
+                                  Text(vm.location!.address)
                                 ]
                               )
                           )
@@ -149,7 +170,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                             Column(
                                 children: [
                                   Text("Hours:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                                  Text(vm.location != null ? vm.location!.hours : 'loading...')
+                                  Text(vm.location!.hours)
                               ]
                             )
                           )
