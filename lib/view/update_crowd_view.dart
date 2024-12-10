@@ -1,8 +1,7 @@
-import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-//import 'package:provider/provider.dart';
-import 'package:academic_atlas/view_model/study_space_view_model.dart';
+import 'package:academic_atlas/view_model/location_detail_view_model.dart';
+//import 'package:academic_atlas/view_model/study_space_view_model.dart';
 //import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:intl/intl.dart';
 import 'dart:developer';
@@ -17,7 +16,7 @@ class UpdateCrowdView extends StatefulWidget {
   const UpdateCrowdView(this.locationID, this.studySpaceID, {super.key});
 
   @override
-  _UpdateCrowdViewState createState() => _UpdateCrowdViewState();
+  State<UpdateCrowdView> createState() => _UpdateCrowdViewState();
 }
 
 class _UpdateCrowdViewState extends State<UpdateCrowdView> {
@@ -30,6 +29,18 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
 
   double _sliderValue = 5.0;
   List<bool> _chipSelections = List.generate(8, (index) => false);
+
+  final amenityItems = [
+    "quiet",
+    "loud",
+    "small tables only",
+    "no free tables",
+    "large tables open",
+    "construction noise",
+    "no outlets",
+    "no whiteboards free",
+  ];
+  List<String> selectedItems = [];
 
   String getFormattedDateTime() {
     final DateTime now = DateTime.now();
@@ -46,9 +57,9 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
     //log(widget.studySpaceID);
 
     String currCrowd = "Current crowd: ${vm.getCrowdLevel(widget.studySpaceID).toString()}";
-    String idlog = "SS ID: ${widget.studySpaceID.toString()}";
+    //String idlog = "SS ID: ${widget.studySpaceID.toString()}";
 
-    log(idlog);
+    //log(idlog);
 
     return Scaffold (
       appBar: AppBar(
@@ -101,29 +112,32 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
               Wrap(
                 spacing: 8.0,
                 runSpacing:8.0,
-                children: List.generate(8, (index) {
-                  //viewModel.currentAmenities.length,
-                  return FilterChip(
-                    label: Text("Option ${index + 1}"),
-                    //Text(viewModel.currentAmenities[index].amenity),
-                    selected: _chipSelections[index],
-                    //viewModel.currentAmenities[index].isSelected,
-                    onSelected: (selected) {
-                      setState(() {
-                        _chipSelections[index] = selected;
-                      });
-                    },
-                  );
-                }),
+                children: amenityItems.map((e) => Padding(
+                  padding: const EdgeInsets.only(top:1),
+                  child: FilterChip(
+                      label: Text(e),
+                      selected: selectedItems.contains(e),
+                      onSelected: (bool value) {
+                        if (selectedItems.contains(e)) {
+                          selectedItems.remove(e);
+                        } else {
+                          selectedItems.add(e);
+                        }
+                        setState(() {});
+                      }),
+                  ),
+                ).toList(),
               ),
             const SizedBox(height: 50),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
 
+                    //log(_sliderValue.toString());
                     vm.setCrowdLevel(widget.studySpaceID, _sliderValue);
-
-                    Navigator.pushNamed(context, detailsRoute, arguments: vm.location!.id);
+                    vm.setCurrentAmenities(widget.studySpaceID, selectedItems);
+                    //Navigator.pushNamed(context, detailsRoute, arguments: vm.location!.id);
+                    Navigator.pop(context, detailsRoute);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Info Submitted!")),

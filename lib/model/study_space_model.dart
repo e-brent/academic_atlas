@@ -11,6 +11,11 @@ class Amenities {
       amenity: json["amenity"]
     );
   }
+
+  Map<String, String> toJson() =>
+      {
+        "amenity": amenity,
+      };
 }
 
 class StudySpace {
@@ -34,6 +39,7 @@ class StudySpace {
       name: json["name"],
       location: json["location"],
       crowdLevel: json["crowdLevel"],
+
       currentAmenities: currAmenitiesData != null ? currAmenitiesData.map((amenity) => Amenities.fromJson(amenity as Map<String, dynamic>)).toList(): <Amenities>[],
       generalAmenities: genAmenitiesData != null ? genAmenitiesData.map((amenity) => Amenities.fromJson(amenity as Map<String, dynamic>)).toList(): <Amenities>[],
       reviews: reviewsData != null ? reviewsData.map((review) => Map<String, String>.from(review as Map<String, dynamic>)).toList() : <Map<String, String>>[],

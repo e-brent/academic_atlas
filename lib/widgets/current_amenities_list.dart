@@ -23,7 +23,7 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
   @override
   void initState() {
     super.initState();
-    Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpace(widget.studySpaceID);
+    Provider.of<LocationDetailsViewModel>(context, listen: false);
     //Provider.of<StudySpaceViewModel>(context, listen: false).currentAmenities;
   }
 
@@ -32,8 +32,7 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
     final vm = Provider.of<LocationDetailsViewModel>(context);
 
     var currAmenities = [];
-    currAmenities.addAll(vm.studySpace!.currentAmenities);
-
+    currAmenities.addAll(vm.studyspaces[widget.studySpaceID].currentAmenities.map((amenity) => amenity.amenity).toList());
     //log(currAmenities.toString());
 
     return GridView.count(
@@ -43,7 +42,14 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
       mainAxisSpacing: 10,
       crossAxisCount: 3,
       childAspectRatio: (5/3),
-      children: <Widget>[
+      children: currAmenities.map((e) =>
+          Container(
+            padding: const EdgeInsets.all(8),
+            color: Colors.deepPurple.shade100,
+            child: Text(e),
+          )
+      ).toList(),
+      /*children: <Widget>[
           Container(
             padding: const EdgeInsets.all(8),
             color: Colors.deepPurple.shade100,
@@ -69,7 +75,7 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
             color: Colors.deepPurple.shade100,
             child: const Text('some medium tables',textAlign: TextAlign.center,),
           ),
-        ],
+        ],*/
     );
   }
 }
