@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:academic_atlas/data_service.dart';
 import 'package:academic_atlas/view_model/location_view_model.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
+import 'dart:developer';
 
 class LocationDetailsViewModel extends ChangeNotifier {
 
@@ -62,7 +63,11 @@ class LocationDetailsViewModel extends ChangeNotifier {
   }
 
   void setCrowdLevel(int id, double newCrowd) {
+    //log("setting crowd level ${studyspaces[id].name}");
     studyspaces[id].crowdLevel = newCrowd;
+    //log(studyspaces[id].crowdLevel.toString());
+
+    notifyListeners();
   }
 
 }
