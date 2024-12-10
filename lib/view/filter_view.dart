@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:academic_atlas/main.dart';
 
 class FilterView extends StatefulWidget {
   const FilterView({super.key});
@@ -21,6 +22,7 @@ class _FilterViewState extends State<FilterView> {
     "Small Tables": false,
     "Pet Friendly": false,
   };
+  bool _showFavs = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,18 @@ class _FilterViewState extends State<FilterView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 50),
+            CheckboxListTile(
+              title: Text("Show Favorites Only",
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+            ),
+            value: _showFavs,
+            onChanged: (value){
+                setState(() {
+                  _showFavs=value!;
+                });
+              },
+              ),
+            const SizedBox(height: 30),
             Text(
               "Crowd Level (1 = Empty to 10 = Very Crowded)",
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
@@ -91,15 +105,8 @@ class _FilterViewState extends State<FilterView> {
                       .where((entry) => entry.value)
                       .map((entry) => entry.key)
                       .toList();
-
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        "Selected Crowd Level: $_selectedCrowdLevel\n"
-                            "Selected Amenities: ${selectedAmenities.join(', ')}",
-                      ),
-                    ),
-                  );
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MyApp()), );
                 },
                 child: const Text("Filter"),
               ),
