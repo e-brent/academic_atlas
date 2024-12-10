@@ -39,7 +39,7 @@ class StudySpaceViewModel extends ChangeNotifier{
     return studyspace.generalAmenities;
   }
 
-  List<Amenities> get reviews{
-    return studyspace.generalAmenities;
+  List<Map<String,String>> get reviews{
+    return studyspace.reviews;
   }
 }

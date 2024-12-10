@@ -16,6 +16,9 @@ class LocationDetailsView extends StatefulWidget {
 }
 
 class _LocationDetailsViewState extends State<LocationDetailsView> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController reviewController = TextEditingController();
+  List<Map<String, String>> reviews = [];
 
   @override
   void initState() {
@@ -206,7 +209,11 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Container(
                     height: 400,
                     width: 500,
-                    child: Reviews(studySpaceID),
+                    child: Reviews(localStudySpace,onAddReview: (name, content) {
+                      setState(() {
+                        reviews.add({'name': name, 'content': content});
+                      });
+                    }),
                   ),
                   SizedBox(height: 30),
                   Text("Leave a Review:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
@@ -216,6 +223,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                       Container(
                         width: 375,
                         child: TextField(
+                          controller: nameController,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Enter your name',
@@ -226,6 +234,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                       Container(
                         width: 375,
                         child: TextField(
+                          controller: reviewController,
                           maxLines: null,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -236,7 +245,17 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                       SizedBox(height: 10),
                       ElevatedButton(
                         onPressed: () {
-                          // make review go to the widget somehow ugh
+                        String name = nameController.text.trim();
+                        String reviewContent = reviewController.text.trim();
+
+                        if (name.isNotEmpty && reviewContent.isNotEmpty) {
+                          setState(() {
+                            reviews.add(
+                                {'name': name, 'content': reviewContent});
+                          });
+                          nameController.clear();
+                          reviewController.clear();
+                        }
                         },
                         child: Text('Submit'),
                         style: ElevatedButton.styleFrom(

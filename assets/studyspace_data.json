@@ -26,6 +26,12 @@
         {
           "amenity": "Water bottle fill stations"
         }
+      ],
+      "reviews": [
+        {"name": "Amy S", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Grace S", "content": "The new floor is very nice, but I don't like the cafe feeling of the food area."},
+        {"name": "Kruti K", "content": "I wish that they did more cleaning on the first floor."},
+        {"name": "Sydney M", "content": "I go here all the time with my friends! We always get lots of work done."}
       ]
     },
     {
@@ -54,6 +60,11 @@
         {
           "amenity": "Good lighting"
         }
+      ],
+      "reviews": [
+        {"name": "Emme B", "content": "Lots of outlets and seating! Also very nice for group projects."},
+        {"name": "Eric H", "content": "I book the study rooms very often to study with my friends."},
+        {"name": "Sophie M", "content": "I hold office hours in one of the smaller rooms! They are perfect."}
       ]
     },
     {
@@ -82,6 +93,12 @@
         {
           "amenity": "Large and small tables"
         }
+      ],
+      "reviews": [
+        {"name": "Grace S", "content": "I love the bagels from Einstein's, but studying is not worth it."},
+        {"name": "Emme B", "content": "WAYYY too loud, and always smells funny."},
+        {"name": "Scott S", "content": "I like the new tables that they added. Very comfy"},
+        {"name": "Amy S", "content": "I never get any work done here because of the long bagel line."}
       ]
     },
     {
@@ -110,6 +127,12 @@
         {
           "amenity": "Small tables"
         }
+      ],
+      "reviews": [
+        {"name": "Sophie M", "content": "The tours that go through Posvar are so annoying and loud."},
+        {"name": "Payal A", "content": "I like the space, and there is good lighting."},
+        {"name": "Kruti K", "content": "Whenever I go here, I can never find an outlet, and when I do they are broken and I have to go home."},
+        {"name": "Amy S", "content": "Would not recommend."}
       ]
     },
     {
@@ -138,6 +161,12 @@
         {
           "amenity": "No restrooms on floor"
         }
+      ],
+      "reviews": [
+        {"name": "Rose S", "content": "I love the dogs that come every Tuesday! A good way to take a break."},
+        {"name": "Joe W", "content": "The seats are so uncomfortable. I would not sit here for more than an hour."},
+        {"name": "Ali D", "content": "The holiday decorations are so cute! Sometimes the room echos."},
+        {"name": "Amy S", "content": "Very hard to find seats during finals, I always skip this spot."}
       ]
     },
     {
@@ -166,6 +195,11 @@
         {
           "amenity": "Limited seating"
         }
+      ],
+      "reviews": [
+        {"name": "Emme B", "content": "The views are incredible!"},
+        {"name": "Grace S", "content": "I like studying here for the vibes, but I get so cold because of teh giant windows."},
+        {"name": "Kruti K", "content": "I enjoyed all of the natural lighting, but there's not a lot of seating available."}
       ]
     },
     {
@@ -194,6 +228,11 @@
         {
           "amenity": "Variety of table sizes"
         }
+      ],
+      "reviews": [
+        {"name": "Amy S", "content": "The bathroom's are disgusting."},
+        {"name": "Edie L", "content": "I'm always able to find a table here, I would recommend this spot."},
+        {"name": "Matt B", "content": "Sometimes the outlets are hard to find, and my laptop is always dying."}
       ]
     },
     {
@@ -222,6 +261,12 @@
         {
           "amenity": "Small tables"
         }
+      ],
+      "reviews": [
+        {"name": "Emme B", "content": "A nice spot, but sometimes loud with the office hours."},
+        {"name": "Scott S", "content": "Always able to find an outlet, and I always run into friends here!"},
+        {"name": "Grace S", "content": "The seats are very comfy! I am always able to find one."},
+        {"name": "Rose N", "content": "I was on this floor for the first time yesterday, and it was great."}
       ]
     },
     {
@@ -250,6 +295,12 @@
         {
           "amenity": "Small tables"
         }
+      ],
+      "reviews": [
+        {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
+        {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
       ]
     },
     {
@@ -278,6 +329,12 @@
         {
           "amenity": "Small tables"
         }
+      ],
+      "reviews": [
+        {"name": "Amy S", "content": "It's very nice in here! I bring my friends a lot"},
+        {"name": "Zoe K", "content": "I go to study here almost every day. I always am able to find a table."},
+        {"name": "Grace S", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Emme B", "content": "The lighting is nice, but sometimes it is loud and smelly."}
       ]
     }
   ]
