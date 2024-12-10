@@ -30,6 +30,18 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
   double _sliderValue = 5.0;
   List<bool> _chipSelections = List.generate(8, (index) => false);
 
+  final amenityItems = [
+    "quiet",
+    "loud",
+    "small tables only",
+    "no free tables",
+    "large tables open",
+    "construction noise",
+    "no outlets",
+    "no whiteboards free",
+  ];
+  List<String> selectedItems = [];
+
   String getFormattedDateTime() {
     final DateTime now = DateTime.now();
     final DateFormat dateFormat = DateFormat('MM-dd-yyyy  @  HH:mm', );
@@ -100,20 +112,21 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
               Wrap(
                 spacing: 8.0,
                 runSpacing:8.0,
-                children: List.generate(8, (index) {
-                  //viewModel.currentAmenities.length,
-                  return FilterChip(
-                    label: Text("Option ${index + 1}"),
-                    //Text(viewModel.currentAmenities[index].amenity),
-                    selected: _chipSelections[index],
-                    //viewModel.currentAmenities[index].isSelected,
-                    onSelected: (selected) {
-                      setState(() {
-                        _chipSelections[index] = selected;
-                      });
-                    },
-                  );
-                }),
+                children: amenityItems.map((e) => Padding(
+                  padding: const EdgeInsets.only(top:1),
+                  child: FilterChip(
+                      label: Text(e),
+                      selected: selectedItems.contains(e),
+                      onSelected: (bool value) {
+                        if (selectedItems.contains(e)) {
+                          selectedItems.remove(e);
+                        } else {
+                          selectedItems.add(e);
+                        }
+                        setState(() {});
+                      }),
+                  ),
+                ).toList(),
               ),
             const SizedBox(height: 50),
               Center(
@@ -122,7 +135,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
 
                     //log(_sliderValue.toString());
                     vm.setCrowdLevel(widget.studySpaceID, _sliderValue);
-
+                    vm.setCurrentAmenities(widget.studySpaceID, selectedItems);
                     //Navigator.pushNamed(context, detailsRoute, arguments: vm.location!.id);
                     Navigator.pop(context, detailsRoute);
 

@@ -36,13 +36,14 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     // Initial Selected Value
     var items = [""];
     items.addAll(vm.getStudySpaceNames(widget.locationID));
-    log("items length: ${items.length.toString()}");
+    //log("items length: ${items.length.toString()}");
 
     var ids = [1000];
     ids.addAll(vm.getStudySpaceIds(widget.locationID));
-    log("ids length: ${ids.length.toString()}");
+    //log("ids length: ${ids.length.toString()}");
 
-    log("study spaces: ${vm.studyspaces.toString()}");
+    //log("study spaces: ${vm.studyspaces.toString()}");
+    log("current amenities: ${vm.getCurrentAmenities(localStudySpace)}");
 
     Map<int, String> idNamePairs = {};
     Map<int, String> nameOrder = {};
@@ -80,7 +81,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
               width: 350,
               fit: BoxFit.cover,),
             SizedBox(height:30),
-            Text("Select a study space in building: ${vm.location}",style: TextStyle(fontStyle: FontStyle.italic),),
+            Text("Select a study space in building: ${vm.location!.name}",style: TextStyle(fontStyle: FontStyle.italic),),
             SizedBox(height: 30),
             DropdownButton<String>(
                 isDense: false,
@@ -141,7 +142,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Container(
                     height: 215,
                     width: 500,
-                    child: CurrAmenitiesList(studySpaceID),
+                    child: CurrAmenitiesList(localStudySpace),
                   ),
                   const Divider(
                     height: 20,
