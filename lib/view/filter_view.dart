@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:provider/provider.dart';
-import 'package:academic_atlas/view_model/study_space_view_model.dart';
-//import 'package:academic_atlas/model/study_space_model.dart';
-import 'package:intl/intl.dart';
 
 class FilterView extends StatefulWidget {
   const FilterView({super.key});
@@ -12,59 +8,97 @@ class FilterView extends StatefulWidget {
 }
 
 class _FilterViewState extends State<FilterView> {
-  List<bool> _chipSelections = List.generate(8, (index) => false);
+  String? _selectedCrowdLevel;
+  final Map<String, bool> _amenities = {
+    "No Seating": false,
+    "Outlets": false,
+    "WiFi": false,
+    "Quiet Space": false,
+    "Natural Lighting": false,
+    "Food Nearby": false,
+    "Wheelchair Accessible": false,
+    "Large Tables": false,
+    "Small Tables": false,
+    "Pet Friendly": false,
+  };
 
   @override
   Widget build(BuildContext context) {
-    //final viewModel = Provider.of<StudySpaceViewModel>(context);
-
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
-        title: Text("Filter Locations",
-          style: TextStyle( fontWeight: FontWeight.bold),
+        title: Text(
+          "Filter Locations",
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-
       ),
       body: Padding(
-        padding:const EdgeInsets.all(16.0) ,
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment:CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 50),
-            Text("Crowd Level:",
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            Text(
+              "Crowd Level (1 = Empty to 10 = Very Crowded)",
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             ),
-
+            DropdownButton<String>(
+              hint: Text("Select the Crowd Level"),
+              value: _selectedCrowdLevel,
+              items: List.generate(
+                10,
+                    (index) => DropdownMenuItem(
+                  value: (index + 1).toString(),
+                  child: Text("Level ${index + 1}"),
+                ),
+              ),
+              onChanged: (value) {
+                setState(() {
+                  _selectedCrowdLevel = value;
+                });
+              },
+              isExpanded: true,
+              underline: Container(
+                height: 1,
+                color: Colors.purple,
+              ),
+            ),
             const SizedBox(height: 50),
-            const Text("Amenities:",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            const Text(
+              "Amenities:",
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Wrap(
-              spacing: 8.0,
-              runSpacing:8.0,
-              children: List.generate(8, (index) {
-                //viewModel.currentAmenities.length,
-                return FilterChip(
-                  label: Text("Option ${index + 1}"),
-                  //Text(viewModel.currentAmenities[index].amenity),
-                  selected: _chipSelections[index],
-                  //viewModel.currentAmenities[index].isSelected,
-                  onSelected: (selected) {
-                    setState(() {
-                      _chipSelections[index] = selected;
-                    });
-                  },
-                );
-              }),
+            Expanded(
+              child: ListView(
+                children: _amenities.keys.map((amenity) {
+                  return CheckboxListTile(
+                    title: Text(amenity),
+                    value: _amenities[amenity],
+                    onChanged: (value) {
+                      setState(() {
+                        _amenities[amenity] = value!;
+                      });
+                    },
+                  );
+                }).toList(),
+              ),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 10),
             Center(
               child: ElevatedButton(
                 onPressed: () {
+                  final selectedAmenities = _amenities.entries
+                      .where((entry) => entry.value)
+                      .map((entry) => entry.key)
+                      .toList();
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Info Submitted!")),
+                    SnackBar(
+                      content: Text(
+                        "Selected Crowd Level: $_selectedCrowdLevel\n"
+                            "Selected Amenities: ${selectedAmenities.join(', ')}",
+                      ),
+                    ),
                   );
                 },
                 child: const Text("Submit"),
