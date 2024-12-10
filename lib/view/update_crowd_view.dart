@@ -1,8 +1,7 @@
-import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-//import 'package:provider/provider.dart';
-import 'package:academic_atlas/view_model/study_space_view_model.dart';
+import 'package:academic_atlas/view_model/location_detail_view_model.dart';
+//import 'package:academic_atlas/view_model/study_space_view_model.dart';
 //import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:intl/intl.dart';
 import 'dart:developer';
@@ -17,7 +16,7 @@ class UpdateCrowdView extends StatefulWidget {
   const UpdateCrowdView(this.locationID, this.studySpaceID, {super.key});
 
   @override
-  _UpdateCrowdViewState createState() => _UpdateCrowdViewState();
+  State<UpdateCrowdView> createState() => _UpdateCrowdViewState();
 }
 
 class _UpdateCrowdViewState extends State<UpdateCrowdView> {
@@ -46,9 +45,9 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
     //log(widget.studySpaceID);
 
     String currCrowd = "Current crowd: ${vm.getCrowdLevel(widget.studySpaceID).toString()}";
-    String idlog = "SS ID: ${widget.studySpaceID.toString()}";
+    //String idlog = "SS ID: ${widget.studySpaceID.toString()}";
 
-    log(idlog);
+    //log(idlog);
 
     return Scaffold (
       appBar: AppBar(
@@ -121,9 +120,11 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
                 child: ElevatedButton(
                   onPressed: () {
 
+                    //log(_sliderValue.toString());
                     vm.setCrowdLevel(widget.studySpaceID, _sliderValue);
 
-                    Navigator.pushNamed(context, detailsRoute, arguments: vm.location!.id);
+                    //Navigator.pushNamed(context, detailsRoute, arguments: vm.location!.id);
+                    Navigator.pop(context, detailsRoute);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Info Submitted!")),

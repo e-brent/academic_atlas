@@ -65,7 +65,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
           child: ElevatedButton(
             onPressed:(){
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => UpdateCrowdView(vm.location!.id, studySpaceID)));
+                MaterialPageRoute(builder: (context) => UpdateCrowdView(vm.location!.id, localStudySpace)));
             },
             child:Text("Update Crowd Level"),
           )
@@ -97,9 +97,9 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     dropdownvalue = newValue!;
                   });
                   //studySpaceID = items.indexOf(dropdownvalue) - 1;
-                  //studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                  studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
                   localStudySpace = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
-                  studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                  //studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
 
                   log("here ${studySpaceID.toString()}");
                 },
