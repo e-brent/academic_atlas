@@ -1,3 +1,4 @@
+import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,7 @@ import 'router.dart' as LocalRouter;
 import 'constants.dart';
 
 import 'package:academic_atlas/view_model/location_list_view_model.dart';
+import 'package:academic_atlas/view_model/location_view_model.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
 
 import 'package:academic_atlas/view/locations_list_view.dart';
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => LocationListViewModel()),
           ChangeNotifierProvider(create: (context) => LocationDetailsViewModel()),
-          //ChangeNotifierProvider(create: (context) => StudySpaceViewModel(studyspace: )),
+          //ChangeNotifierProvider(create: (context) => StudySpaceViewModel(studyspace: StudySpace as StudySpace)),
         ],
       child: MaterialApp(
       title: 'Pitt Academic Atlas',
