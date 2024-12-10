@@ -58,7 +58,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
 
     return Scaffold (
       appBar: AppBar(
-          title: Text("${vm.location!.name} Details")
+          title: Text("${vm.location!.name}")
       ),
 
       bottomNavigationBar: Container (
@@ -82,7 +82,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
               fit: BoxFit.cover,),
             SizedBox(height:30),
             Text("Select a study space in building: ${vm.location!.name}",style: TextStyle(fontStyle: FontStyle.italic),),
-            SizedBox(height: 30),
+            SizedBox(height: 10),
             DropdownButton<String>(
                 isDense: false,
                 hint: Text("Select study space"),
@@ -127,20 +127,20 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     },
                   ),
                   SizedBox(height:20),
-                  const Divider(
+                  /*const Divider(
                     height: 20,
                     thickness: 2,
                     indent: 30,
                     endIndent: 30,
                     color: Colors.grey,
-                  ),
+                  ),*/
                   SizedBox(height: 20),
                   Text("Current Amenities:",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 215,
+                    height: 250,
                     width: 500,
                     child: CurrAmenitiesList(localStudySpace),
                   ),
@@ -192,7 +192,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Container(
                     height: 215,
                     width: 500,
-                    child: StaticAmenitiesList(studySpaceID),
+                    child: StaticAmenitiesList(localStudySpace),
                   ),
                   const Divider(
                     height: 20,
