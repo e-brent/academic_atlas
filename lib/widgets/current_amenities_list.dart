@@ -49,33 +49,6 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
             child: Text(e),
           )
       ).toList(),
-      /*children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('no outlets', textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('small tables only',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('loud',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('too much construction noise',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('some medium tables',textAlign: TextAlign.center,),
-          ),
-        ],*/
     );
   }
 }

@@ -32,7 +32,7 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
     final vm = Provider.of<LocationDetailsViewModel>(context);
 
     var staticAmenities = [];
-    staticAmenities.addAll(vm.studySpace!.currentAmenities);
+    staticAmenities.addAll(vm.studyspaces[widget.studySpaceID].generalAmenities.map((amenity) => amenity.amenity).toList());
 
     //log(currAmenities.toString());
 
@@ -43,33 +43,13 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
       mainAxisSpacing: 10,
       crossAxisCount: 3,
         childAspectRatio: (5/3),
-        children: <Widget>[
+      children: staticAmenities.map((e) =>
           Container(
             padding: const EdgeInsets.all(8),
             color: Colors.deepPurple.shade100,
-            child: const Text('no outlets',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('small tables only',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color:Colors.deepPurple.shade100,
-            child: const Text('loud',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('too much construction noise',textAlign: TextAlign.center,),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
-            child: const Text('some medium tables',textAlign: TextAlign.center,),
-          ),
-        ],
+            child: Text(e),
+          )
+      ).toList(),
     );
   }
 }
