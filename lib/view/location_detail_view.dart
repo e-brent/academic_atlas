@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:academic_atlas/widgets/current_amenities_list.dart';
 import 'package:academic_atlas/widgets/static_amenities_list.dart';
+import 'package:academic_atlas/widgets/reviews.dart';
 import 'dart:developer';
 
 class LocationDetailsView extends StatefulWidget {
@@ -67,13 +68,13 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
             Text("Select a study space in building: ${vm.location != null ? vm.location!.name : 'loading...'}",style: TextStyle(fontStyle: FontStyle.italic),),
             SizedBox(height: 30),
             DropdownButton<String>(
-                isDense: true,
+                isDense: false,
                 hint: Text("Select study space"),
                 value: dropdownvalue,
                 items: items.map((String items) {
                   return DropdownMenuItem(
                     value: items,
-                    child: Text(items),
+                    child: Text(items,style: TextStyle(fontSize: 18), ),
                   );
                 }).toList(),
                 onChanged: (String? newValue) {
@@ -180,7 +181,12 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   ),
                   SizedBox(height: 20),
                   Text("Reviews:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                  SizedBox(height: 40),
+                  Container(
+                    height: 400,
+                    width: 500,
+                    child: Reviews(studySpaceID),
+                  ),
+                  SizedBox(height: 50),
                 ]
             )
           ],

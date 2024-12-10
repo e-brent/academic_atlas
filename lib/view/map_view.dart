@@ -31,7 +31,6 @@ class _MapViewState extends State<MapView> {
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const FilterView()), );
-              // stretch goal .. implement if have time (DEV_4)
             },
           ),
         ],
