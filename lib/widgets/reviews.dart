@@ -11,63 +11,53 @@ import 'package:academic_atlas/constants.dart';
 
 class Reviews extends StatefulWidget {
   final int studySpaceID;
-
-  Reviews(this.studySpaceID);
+  final void Function(String name, String content) onAddReview;
+  Reviews(this.studySpaceID,{required this.onAddReview});
 
   @override
   State<Reviews> createState() => _ReviewsState();
 }
 
 class _ReviewsState extends State<Reviews> {
+  List<Map<String, String>> reviews = [];
 
   @override
   void initState() {
     super.initState();
-    Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpace(widget.studySpaceID);
+    // Fetch initial reviews
+    final vm = Provider.of<LocationDetailsViewModel>(context, listen: false);
+    vm.fetchStudySpace(widget.studySpaceID);
+    reviews = vm.studySpace?.reviews ?? [];
+  }
+
+  void addReview(String name, String content) {
+    setState(() {
+      reviews.add({'name': name, 'content': content});
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final vm = Provider.of<LocationDetailsViewModel>(context);
-
-    var reviews = [];
-    reviews.addAll(vm.studySpace!.reviews);
-
-
-    return GridView.count(
-      primary: false,
+    return GridView.builder(
       padding: const EdgeInsets.all(20),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 1,
-      childAspectRatio: (9/3),
-      children: <Widget>[
-        Container(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 1,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        childAspectRatio: 9 / 3,
+      ),
+      itemCount: reviews.length,
+      itemBuilder: (context, index) {
+        final review = reviews[index];
+        return Container(
           padding: const EdgeInsets.all(8),
           color: Colors.deepPurple.shade100,
-          child:Text('Amy S\n\nI enjoyed all of the natural lighting, but the seating situation left something to be desired.',textAlign: TextAlign.center,),
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          color: Colors.deepPurple.shade100,
-          child: const Text('Kruti K \n\n I come here to study with my friends all the time! It is a great place to hang out and also get lots of work done.',textAlign: TextAlign.center,),
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          color:Colors.deepPurple.shade100,
-          child: const Text('Grace S\n\n I wish I had never been inside this building. There is never a seat, and it is so loud I can barely hear myself think! Would not recommend.',textAlign: TextAlign.center,),
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          color: Colors.deepPurple.shade100,
-          child: const Text('Emme B\n\n Loved the new seating options! really wish people would not leave trash on the ground though, it is distracting for the studiers.',textAlign: TextAlign.center,),
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          color: Colors.deepPurple.shade100,
-          child: const Text('Sophie M\n\n Great for group work! There are usually a lot of open tables with outlets, and I do not feel bad when we have to collaborate out loud.',textAlign: TextAlign.center,),
-        ),
-      ],
+          child: Text(
+            '${review['name']}\n\n${review['content']}',
+            textAlign: TextAlign.center,
+          ),
+        );
+      },
     );
   }
 }
