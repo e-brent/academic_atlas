@@ -6,26 +6,14 @@
       "location": 0,
       "crowdLevel": 0.5,
       "currentAmenities": [
-        {
-          "amenity": "quiet"
-        },
-        {
-          "amenity": "only small tables left"
-        },
-        {
-          "amenity": "no outlets"
-        }
+        {"amenity": "quiet"},
+        {"amenity": "only small tables left"},
+        { "amenity": "no outlets"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Food and coffee (Saxby's)"
-        },
-        {
-          "amenity": "Restrooms"
-        },
-        {
-          "amenity": "Water bottle fill stations"
-        }
+        {"amenity": "Food and coffee (Saxby's)"},
+        {"amenity": "Restrooms"},
+        {"amenity": "Water bottle fill stations"}
       ],
       "reviews": [
         {"name": "Amy S", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
@@ -40,26 +28,14 @@
       "location": 0,
       "crowdLevel": 0.8,
       "currentAmenities": [
-        {
-          "amenity": "no whiteboards"
-        },
-        {
-          "amenity": "construction noise"
-        },
-        {
-          "amenity": "study rooms being loud"
-        }
+        {"amenity": "no whiteboards"},
+        {"amenity": "construction noise"},
+        {"amenity": "study rooms being loud"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Large and small tables"
-        },
-        {
-          "amenity": "Comfortable chairs"
-        },
-        {
-          "amenity": "Good lighting"
-        }
+        {"amenity": "Large and small tables"},
+        {"amenity": "Comfortable chairs"},
+        {"amenity": "Good lighting"}
       ],
       "reviews": [
         {"name": "Emme B", "content": "Lots of outlets and seating! Also very nice for group projects."},
@@ -73,26 +49,14 @@
       "location": 1,
       "crowdLevel": 0.75,
       "currentAmenities": [
-        {
-          "amenity": "no seating"
-        },
-        {
-          "amenity": "burning smell"
-        },
-        {
-          "amenity": "dirty tables"
-        }
+        {"amenity": "no seating"},
+        {"amenity": "burning smell"},
+        {"amenity": "dirty tables"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Food and coffee (Einstein Bro's)"
-        },
-        {
-          "amenity": "No outlets"
-        },
-        {
-          "amenity": "Large and small tables"
-        }
+        {"amenity": "Food and coffee (Einstein Bro's)"},
+        {"amenity": "No outlets"},
+        {"amenity": "Large and small tables"}
       ],
       "reviews": [
         {"name": "Grace S", "content": "I love the bagels from Einstein's, but studying is not worth it."},
@@ -107,26 +71,14 @@
       "location": 1,
       "crowdLevel": 1.00,
       "currentAmenities": [
-        {
-          "amenity": "no seating"
-        },
-        {
-          "amenity": "tours being loud"
-        },
-        {
-          "amenity": "broken outlets"
-        }
+        {"amenity": "no seating"},
+        {"amenity": "tours being loud"},
+        {"amenity": "broken outlets"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Outlets"
-        },
-        {
-          "amenity": "Good lighting"
-        },
-        {
-          "amenity": "Small tables"
-        }
+        {"amenity": "Outlets"},
+        {"amenity": "Good lighting"},
+        {"amenity": "Small tables"}
       ],
       "reviews": [
         {"name": "Sophie M", "content": "The tours that go through Posvar are so annoying and loud."},
@@ -141,26 +93,14 @@
       "location": 2,
       "crowdLevel": 7.00,
       "currentAmenities": [
-        {
-          "amenity": "not quiet"
-        },
-        {
-          "amenity": "service dogs here"
-        },
-        {
-          "amenity": "crowded"
-        }
+        {"amenity": "not quiet"},
+        {"amenity": "service dogs here"},
+        {"amenity": "crowded"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Uncomfortable seating"
-        },
-        {
-          "amenity": "Not great lighting"
-        },
-        {
-          "amenity": "No restrooms on floor"
-        }
+        {"amenity": "Uncomfortable seating"},
+        {"amenity": "Not great lighting"},
+        {"amenity": "No restrooms on floor"}
       ],
       "reviews": [
         {"name": "Rose S", "content": "I love the dogs that come every Tuesday! A good way to take a break."},
@@ -175,26 +115,14 @@
       "location": 2,
       "crowdLevel": 4.00,
       "currentAmenities": [
-        {
-          "amenity": "quiet"
-        },
-        {
-          "amenity": "small tables open"
-        },
-        {
-          "amenity": "free coffee"
-        }
+        {"amenity": "quiet"},
+        {"amenity": "small tables open"},
+        {"amenity": "free coffee"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Quiet space"
-        },
-        {
-          "amenity": "Good views"
-        },
-        {
-          "amenity": "Limited seating"
-        }
+        {"amenity": "Quiet space"},
+        {"amenity": "Good views"},
+        {"amenity": "Limited seating"}
       ],
       "reviews": [
         {"name": "Emme B", "content": "The views are incredible!"},
@@ -208,26 +136,14 @@
       "location": 3,
       "crowdLevel": 6.00,
       "currentAmenities": [
-        {
-          "amenity": "High top tables free"
-        },
-        {
-          "amenity": "Medium noise"
-        },
-        {
-          "amenity": "Women's restroom is gross"
-        }
+        {"amenity": "High top tables free"},
+        {"amenity": "Medium noise"},
+        {"amenity": "Women's restroom is gross"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Outlets"
-        },
-        {
-          "amenity": "Restrooms"
-        },
-        {
-          "amenity": "Variety of table sizes"
-        }
+        {"amenity": "Outlets"},
+        {"amenity": "Restrooms"},
+        {"amenity": "Variety of table sizes"}
       ],
       "reviews": [
         {"name": "Amy S", "content": "The bathroom's are disgusting."},
@@ -241,26 +157,14 @@
       "location": 3,
       "crowdLevel": 8.00,
       "currentAmenities": [
-        {
-          "amenity": "office hours happening"
-        },
-        {
-          "amenity": "loud"
-        },
-        {
-          "amenity": "really warm"
-        }
+        {"amenity": "office hours happening"},
+        {"amenity": "loud"},
+        {"amenity": "really warm"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Outlets"
-        },
-        {
-          "amenity": "Comfortable Seats"
-        },
-        {
-          "amenity": "Small tables"
-        }
+        {"amenity": "Outlets"},
+        {"amenity": "Comfortable Seats"},
+        {"amenity": "Small tables"}
       ],
       "reviews": [
         {"name": "Emme B", "content": "A nice spot, but sometimes loud with the office hours."},
@@ -275,26 +179,36 @@
       "location": 4,
       "crowdLevel": 6.00,
       "currentAmenities": [
-        {
-          "amenity": "empty tables"
-        },
-        {
-          "amenity": "quiet"
-        },
-        {
-          "amenity": "outlets taken"
-        }
+        {"amenity": "empty tables"},
+        {"amenity": "quiet"},
+        {"amenity": "outlets taken"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "No restrooms on floor"
-        },
-        {
-          "amenity": "Good lighting"
-        },
-        {
-          "amenity": "Small tables"
-        }
+        {"amenity": "No restrooms on floor"},
+        {"amenity": "Good lighting"},
+        {"amenity": "Small tables"}
+      ],
+      "reviews": [
+        {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
+        {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Floor 1 Study Lounge",
+      "location": 4,
+      "crowdLevel": 6.00,
+      "currentAmenities": [
+        {"amenity": "tables taken"},
+        {"amenity": "quiet"},
+        {"amenity": "outlets taken"}
+      ],
+      "generalAmenities": [
+        {"amenity": "No restrooms on floor"},
+        {"amenity": "Comfortable chairs"},
+        {"amenity": "Small tables"}
       ],
       "reviews": [
         {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
@@ -305,36 +219,134 @@
     },
     {
       "id": 10,
-      "name": "?????",
+      "name": "Floor 3, Quiet Study Lounge",
       "location": 5,
-      "crowdLevel": 1.00,
+      "crowdLevel": 6.00,
       "currentAmenities": [
-        {
-          "amenity": "no seating"
-        },
-        {
-          "amenity": "tours being loud"
-        },
-        {
-          "amenity": "broken outlets"
-        }
+        {"amenity": "tables taken"},
+        {"amenity": "white board open"},
+        {"amenity": "high top open"}
       ],
       "generalAmenities": [
-        {
-          "amenity": "Outlets"
-        },
-        {
-          "amenity": "Good lighting"
-        },
-        {
-          "amenity": "Small tables"
-        }
+        {"amenity": "Restrooms"},
+        {"amenity": "Quiet"},
+        {"amenity": "Small tables"}
       ],
       "reviews": [
         {"name": "Amy S", "content": "It's very nice in here! I bring my friends a lot"},
         {"name": "Zoe K", "content": "I go to study here almost every day. I always am able to find a table."},
         {"name": "Grace S", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
         {"name": "Emme B", "content": "The lighting is nice, but sometimes it is loud and smelly."}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Floor 3, Collaborative Lounge",
+      "location": 5,
+      "crowdLevel": 8.00,
+      "currentAmenities": [
+        {"amenity": "smells like food"},
+        {"amenity": "tables taken"},
+        {"amenity": "whiteboard open"}
+      ],
+      "generalAmenities": [
+        {"amenity": "Collaborative space"},
+        {"amenity": "Medium tables"},
+        {"amenity": "Small tables"}
+      ],
+      "reviews": [
+        {"name": "Amy S", "content": "It's very nice in here! I bring my friends a lot"},
+        {"name": "Zoe K", "content": "I go to study here almost every day. I always am able to find a table."},
+        {"name": "Grace S", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Emme B", "content": "The lighting is nice, but sometimes it is loud and smelly."}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Ground Floor, Library",
+      "location": 6,
+      "crowdLevel": 9.00,
+      "currentAmenities": [
+        {"amenity": "loud group work"},
+        {"amenity": "outlets open"},
+        {"amenity": "individual seats open"}
+      ],
+      "generalAmenities": [
+        {"amenity": "Large tables"},
+        {"amenity": "Good lighting"},
+        {"amenity": "Medium noise level"}
+      ],
+      "reviews": [
+        {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
+        {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Floor 2, Mascaro Center",
+      "location": 6,
+      "crowdLevel": 5.00,
+      "currentAmenities": [
+        {"amenity": "quiet"},
+        {"amenity": "hot"},
+        {"amenity": "small tables open"}
+      ],
+      "generalAmenities": [
+        {"amenity": "Small tables"},
+        {"amenity": "In a thoroughfare"},
+        {"amenity": "Medium noise level"}
+      ],
+      "reviews": [
+        {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
+        {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Floor 3",
+      "location": 7,
+      "crowdLevel": 2.00,
+      "currentAmenities": [
+        {"amenity": "pathfinder tours going through"},
+        {"amenity": "cold"},
+        {"amenity": "lots of open seats"}
+      ],
+      "generalAmenities": [
+        {"amenity": "Large tables"},
+        {"amenity": "Echoey"},
+        {"amenity": "Restrooms"}
+      ],
+      "reviews": [
+        {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
+        {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Floor 2",
+      "location": 6,
+      "crowdLevel": 4.00,
+      "currentAmenities": [
+        {"amenity": "cold"},
+        {"amenity": "outlets not working"},
+        {"amenity": "tables open"}
+      ],
+      "generalAmenities": [
+        {"amenity": "Quiet"},
+        {"amenity": "No outlets"},
+        {"amenity": "Uncomfortable chairs"}
+      ],
+      "reviews": [
+        {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
+        {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
       ]
     }
   ]

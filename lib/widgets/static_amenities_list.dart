@@ -46,8 +46,12 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
       children: staticAmenities.map((e) =>
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.deepPurple.shade100,
+            //color: Colors.deepPurple.shade100,
             child: Text(e),
+            decoration: BoxDecoration(
+              color: Colors.deepPurple.shade100,
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            )
           )
       ).toList(),
     );
