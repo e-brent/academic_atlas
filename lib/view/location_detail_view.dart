@@ -66,11 +66,15 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
 
       bottomNavigationBar: Container (
           height: 63,
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 5),
           child: ElevatedButton(
             onPressed:(){
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) => UpdateCrowdView(vm.location!.id, localStudySpace)));
             },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple.shade100),
+            ),
             child:Text("Update Crowd Level"),
           )
       ),
