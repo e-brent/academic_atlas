@@ -3,6 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:academic_atlas/view/filter_view.dart';
+import 'package:academic_atlas/view/search_view.dart';
 
 class MapView extends StatefulWidget {
   const MapView({super.key});
@@ -23,7 +24,8 @@ class _MapViewState extends State<MapView> {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              // stretch goal .. implement if have time (Dev-4)
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SearchView()), );
             },
           ),
           IconButton(
