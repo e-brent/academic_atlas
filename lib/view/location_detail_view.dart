@@ -80,7 +80,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
               backgroundColor: WidgetStateProperty.all<Color>(Colors.deepPurple.shade100),
             ),
             child: Text(
-              'Upgrade Crowd Level',
+              'Update Crowd Level',
               style: TextStyle(color: Colors.black),
             ),
           )
