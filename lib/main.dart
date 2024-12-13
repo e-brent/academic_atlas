@@ -1,5 +1,4 @@
 import 'package:academic_atlas/model/study_space_model.dart';
-import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,7 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'router.dart' as LocalRouter;
 import 'constants.dart';
 
+import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'package:academic_atlas/view_model/location_list_view_model.dart';
+import 'package:academic_atlas/view_model/update_view_model.dart';
+
 import 'package:academic_atlas/view_model/location_view_model.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
 
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => LocationListViewModel()),
           ChangeNotifierProvider(create: (context) => LocationDetailsViewModel()),
+          ChangeNotifierProvider(create: (context) => UpdateViewModel())
           //ChangeNotifierProvider(create: (context) => StudySpaceViewModel(studyspace: StudySpace as StudySpace)),
         ],
       child: MaterialApp(
@@ -45,10 +48,17 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           titleLarge: GoogleFonts.oswald(
             fontSize: 30,
+            //fontWeight: FontWeight.bold,
           ),
           titleMedium: GoogleFonts.oswald(
             fontSize: 20
           )
+        ),
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            // Set the predictive back transitions for Android.
+            TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
+          },
         )
       ),
             home:Column(

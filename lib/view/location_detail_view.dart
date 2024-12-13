@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:academic_atlas/view/update_crowd_view.dart';
 import 'package:provider/provider.dart';
+import 'dart:developer';
+
+import 'package:academic_atlas/view/update_crowd_view.dart';
+
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
+
 import 'package:academic_atlas/widgets/current_amenities_list.dart';
 import 'package:academic_atlas/widgets/static_amenities_list.dart';
 import 'package:academic_atlas/widgets/reviews.dart';
-import 'dart:developer';
+import 'package:academic_atlas/widgets/static_crowd_slider.dart';
 
 class LocationDetailsView extends StatefulWidget {
   final int locationID;
@@ -19,49 +23,47 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController reviewController = TextEditingController();
   List<Map<String, String>> reviews = [];
+  String dropdownvalue = "";
+  List<String> items = [];
+  List<int> ids = [];
+  var studySpaceID = 0;
+  var localStudySpace = 0;
+  Map<int, String> nameOrder = {};
 
   @override
   void initState() {
     super.initState();
-    Provider.of<LocationDetailsViewModel>(context, listen: false).fetchLocation(widget.locationID);
-    Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpaces(widget.locationID);
+    getData();
   }
 
-  String dropdownvalue = "";
-  var studySpaceID = 0;
-  var localStudySpace = 0;
+  void getData() async {
+    await Provider.of<LocationDetailsViewModel>(context, listen: false).fetchLocation(widget.locationID);
+    await Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpaces(widget.locationID);
+
+    if(Provider.of<LocationDetailsViewModel>(context, listen: false).getStudySpaceNames(widget.locationID).isNotEmpty){
+      setState(() {
+        log("setting values");
+        dropdownvalue = Provider.of<LocationDetailsViewModel>(context, listen: false).getStudySpaceNames(widget.locationID).first;
+        items.addAll(Provider.of<LocationDetailsViewModel>(context, listen: false).getStudySpaceNames(widget.locationID));
+        ids.addAll(Provider.of<LocationDetailsViewModel>(context, listen: false).getStudySpaceIds(widget.locationID));
+
+        for (int i = 0; i < ids.length; i++){
+          //idNamePairs[ids[i]] = items[i];
+          nameOrder[i] = items[i];
+        }
+      });
+
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
 
-    final vm = Provider.of<LocationDetailsViewModel>(context);
-
-    // Initial Selected Value
-    var items = [""];
-    items.addAll(vm.getStudySpaceNames(widget.locationID));
-    //log("items length: ${items.length.toString()}");
-
-    var ids = [1000];
-    ids.addAll(vm.getStudySpaceIds(widget.locationID));
-    //log("ids length: ${ids.length.toString()}");
-
-    //log("study spaces: ${vm.studyspaces.toString()}");
-    log("current amenities: ${vm.getCurrentAmenities(localStudySpace)}");
-
-    Map<int, String> idNamePairs = {};
-    Map<int, String> nameOrder = {};
-
-    for (int i = 1; i < ids.length; i++){
-      idNamePairs[ids[i]] = items[i];
-      nameOrder[i- 1] = items[i];
-    }
-
-    //log(widget.locationID.toString());
-    log(idNamePairs.toString());
+    final vm = Provider.of<LocationDetailsViewModel>(context, listen: false);
 
     return Scaffold (
       appBar: AppBar(
-          title: Text("${vm.location!.name}")
+          title: Text(vm.location != null ? vm.location!.name : "Loading...")
       ),
 
       bottomNavigationBar: Container (
@@ -71,9 +73,11 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
             onPressed:(){
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) => UpdateCrowdView(vm.location!.id, localStudySpace)));
+                //MaterialPageRoute(builder: (context) => UpdateCrowdView(localStudySpace)));
+                log(localStudySpace.toString());
             },
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple.shade100),
+              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepPurple.shade100),
             ),
             child:Text("Update Crowd Level"),
           )
@@ -83,71 +87,65 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(vm.location!.image,
+            Image.asset(vm.location?.image ?? "assets/default.png",
               height: 250,
               width: 350,
-              fit: BoxFit.cover,),
+              fit: BoxFit.cover,
+            ),
             SizedBox(height:30),
-            Text("Select a study space in building: ${vm.location!.name}",style: TextStyle(fontStyle: FontStyle.italic),),
+            Text("Select a study space in ${vm.location != null ? vm.location!.name : "Loading..."}",style: TextStyle(fontStyle: FontStyle.italic),),
             SizedBox(height: 10),
             DropdownButton<String>(
                 isDense: false,
-                hint: Text("Select study space"),
+                hint: Text("Select a study space"),
                 value: dropdownvalue,
                 items: items.map((String items) {
                   return DropdownMenuItem(
                     value: items,
-                    child: Text(items,style: TextStyle(fontSize: 18), ),
+                    child: Text(
+                      items,
+                      style: TextStyle(fontSize: 18),
+                    ),
                   );
                 }).toList(),
-                onChanged: (String? newValue) {
+                onChanged: (String? value) {
                   setState(() {
-                    dropdownvalue = newValue!;
+                    dropdownvalue = value!;
                   });
                   //studySpaceID = items.indexOf(dropdownvalue) - 1;
-                  studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                  //studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
                   localStudySpace = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
                   //studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
 
-                  log("here ${studySpaceID.toString()}");
+                  log("here ${dropdownvalue}");
                 },
               ),
-            SizedBox(height:40),
+            //SizedBox(height:40),
             SizedBox(height:20),
             Column (
                 children: [
-                  Text('Location/study space details:',style: TextStyle(decoration:TextDecoration.underline, fontSize: 24, fontWeight: FontWeight.bold),),
-                  SizedBox(height:30),
-                  Text("Current Crowd Level: ${vm.studyspaces[localStudySpace].crowdLevel.toString()}",
+                  //Text('Location/study space details:',style: TextStyle(decoration:TextDecoration.underline, fontSize: 24, fontWeight: FontWeight.bold),),
+                  //SizedBox(height:30),
+                  /*Text("Current Crowd Level: ${vm.studyspaces.isNotEmpty ? vm.studyspaces[localStudySpace].crowdLevel.toString() : "Loading..."}",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Slider(
-                    value: vm.studyspaces[localStudySpace].crowdLevel,
-                    //value: 7,//viewModel.crowdLevel,
-                    //value: vm.studyspace.crowedLevel != null ? vm.studyspace!.crowdLevel : 0,//viewModel.crowdLevel,
+                    value: vm.studyspaces.isNotEmpty ? vm.studyspaces[localStudySpace].crowdLevel : 0,
                     min:0,
                     max:10,
                     divisions: 10,
                     onChanged: (value){
                       null;
-                      //viewModel.crowdLevel(value);
                     },
-                  ),
-                  SizedBox(height:20),
-                  /*const Divider(
-                    height: 20,
-                    thickness: 2,
-                    indent: 30,
-                    endIndent: 30,
-                    color: Colors.grey,
                   ),*/
+                  StaticCrowdSlider(localStudySpace),
                   SizedBox(height: 20),
                   Text("Current Amenities:",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 250,
+                    height: 150,
                     width: 500,
                     child: CurrAmenitiesList(localStudySpace),
                   ),
@@ -167,7 +165,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                               Column(
                                 children: [
                                   Text("Address:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                                  Text(vm.location!.address)
+                                  Text(vm.location != null ? vm.location!.address : "Address loading...")
                                 ]
                               )
                           )
@@ -178,7 +176,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                             Column(
                                 children: [
                                   Text("Hours:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                                  Text(vm.location!.hours)
+                                  Text(vm.location != null ? vm.location!.hours : "Hours loading...")
                               ]
                             )
                           )
@@ -261,10 +259,10 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                           reviewController.clear();
                         }
                         },
-                        child: Text('Submit'),
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(300, 50),
                         ),
+                        child: Text('Submit'),
                       ),
                       SizedBox(height: 50),
                     ],

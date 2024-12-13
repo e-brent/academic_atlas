@@ -6,9 +6,9 @@
       "location": 0,
       "crowdLevel": 0.5,
       "currentAmenities": [
-        {"amenity": "quiet"},
-        {"amenity": "only small tables left"},
-        { "amenity": "no outlets"}
+        {"amenity": "Quiet"},
+        {"amenity": "Small tables only"},
+        { "amenity": "Outlets taken"}
       ],
       "generalAmenities": [
         {"amenity": "Food and coffee (Saxby's)"},
@@ -28,9 +28,9 @@
       "location": 0,
       "crowdLevel": 0.8,
       "currentAmenities": [
-        {"amenity": "no whiteboards"},
-        {"amenity": "construction noise"},
-        {"amenity": "study rooms being loud"}
+        {"amenity": "No whiteboards free"},
+        {"amenity": "Construction noise"},
+        {"amenity": "Loud"}
       ],
       "generalAmenities": [
         {"amenity": "Large and small tables"},
@@ -49,9 +49,9 @@
       "location": 1,
       "crowdLevel": 0.75,
       "currentAmenities": [
-        {"amenity": "no seating"},
-        {"amenity": "burning smell"},
-        {"amenity": "dirty tables"}
+        {"amenity": "No free tables"},
+        {"amenity": "Bad smells"},
+        {"amenity": "Dirty tables"}
       ],
       "generalAmenities": [
         {"amenity": "Food and coffee (Einstein Bro's)"},
@@ -71,9 +71,9 @@
       "location": 1,
       "crowdLevel": 1.00,
       "currentAmenities": [
-        {"amenity": "no seating"},
-        {"amenity": "tours being loud"},
-        {"amenity": "broken outlets"}
+        {"amenity": "Individual seats only"},
+        {"amenity": "Event going on"},
+        {"amenity": "Outlets not working"}
       ],
       "generalAmenities": [
         {"amenity": "Outlets"},
@@ -93,9 +93,9 @@
       "location": 2,
       "crowdLevel": 7.00,
       "currentAmenities": [
-        {"amenity": "not quiet"},
-        {"amenity": "service dogs here"},
-        {"amenity": "crowded"}
+        {"amenity": "Loud"},
+        {"amenity": "Service dog event"},
+        {"amenity": "No free tables"}
       ],
       "generalAmenities": [
         {"amenity": "Uncomfortable seating"},
@@ -115,9 +115,9 @@
       "location": 2,
       "crowdLevel": 4.00,
       "currentAmenities": [
-        {"amenity": "quiet"},
-        {"amenity": "small tables open"},
-        {"amenity": "free coffee"}
+        {"amenity": "Quiet"},
+        {"amenity": "Small tables open"},
+        {"amenity": "Free food/coffee"}
       ],
       "generalAmenities": [
         {"amenity": "Quiet space"},
@@ -157,9 +157,9 @@
       "location": 3,
       "crowdLevel": 8.00,
       "currentAmenities": [
-        {"amenity": "office hours happening"},
-        {"amenity": "loud"},
-        {"amenity": "really warm"}
+        {"amenity": "Office hours group(s) working"},
+        {"amenity": "Loud"},
+        {"amenity": "Hot"}
       ],
       "generalAmenities": [
         {"amenity": "Outlets"},
@@ -179,9 +179,9 @@
       "location": 4,
       "crowdLevel": 6.00,
       "currentAmenities": [
-        {"amenity": "empty tables"},
-        {"amenity": "quiet"},
-        {"amenity": "outlets taken"}
+        {"amenity": "Lots of tables available"},
+        {"amenity": "Quiet"},
+        {"amenity": "Outlets taken"}
       ],
       "generalAmenities": [
         {"amenity": "No restrooms on floor"},
@@ -201,9 +201,9 @@
       "location": 4,
       "crowdLevel": 6.00,
       "currentAmenities": [
-        {"amenity": "tables taken"},
-        {"amenity": "quiet"},
-        {"amenity": "outlets taken"}
+        {"amenity": "No free tables"},
+        {"amenity": "Loud"},
+        {"amenity": "Individual seats only"}
       ],
       "generalAmenities": [
         {"amenity": "No restrooms on floor"},
@@ -223,9 +223,9 @@
       "location": 5,
       "crowdLevel": 6.00,
       "currentAmenities": [
-        {"amenity": "tables taken"},
-        {"amenity": "white board open"},
-        {"amenity": "high top open"}
+        {"amenity": "Whiteboards available"},
+        {"amenity": "Bad smells"},
+        {"amenity": "Men's restroom is dirty"}
       ],
       "generalAmenities": [
         {"amenity": "Restrooms"},
@@ -245,9 +245,9 @@
       "location": 5,
       "crowdLevel": 8.00,
       "currentAmenities": [
-        {"amenity": "smells like food"},
-        {"amenity": "tables taken"},
-        {"amenity": "whiteboard open"}
+        {"amenity": "Cold"},
+        {"amenity": "No whiteboards free"},
+        {"amenity": "No free tables"}
       ],
       "generalAmenities": [
         {"amenity": "Collaborative space"},
@@ -267,9 +267,9 @@
       "location": 6,
       "crowdLevel": 9.00,
       "currentAmenities": [
-        {"amenity": "loud group work"},
-        {"amenity": "outlets open"},
-        {"amenity": "individual seats open"}
+        {"amenity": "Loud"},
+        {"amenity": "Outlets available"},
+        {"amenity": "Individual seats only"}
       ],
       "generalAmenities": [
         {"amenity": "Large tables"},
@@ -289,9 +289,9 @@
       "location": 6,
       "crowdLevel": 5.00,
       "currentAmenities": [
-        {"amenity": "quiet"},
-        {"amenity": "hot"},
-        {"amenity": "small tables open"}
+        {"amenity": "Quiet"},
+        {"amenity": "Hot"},
+        {"amenity": "Small tables open"}
       ],
       "generalAmenities": [
         {"amenity": "Small tables"},
@@ -311,9 +311,9 @@
       "location": 7,
       "crowdLevel": 2.00,
       "currentAmenities": [
-        {"amenity": "pathfinder tours going through"},
-        {"amenity": "cold"},
-        {"amenity": "lots of open seats"}
+        {"amenity": "Event going on"},
+        {"amenity": "Cold"},
+        {"amenity": "Lots of tables available"}
       ],
       "generalAmenities": [
         {"amenity": "Large tables"},
@@ -333,9 +333,9 @@
       "location": 6,
       "crowdLevel": 4.00,
       "currentAmenities": [
-        {"amenity": "cold"},
-        {"amenity": "outlets not working"},
-        {"amenity": "tables open"}
+        {"amenity": "Cold"},
+        {"amenity": "Outlets not working"},
+        {"amenity": "Lots of tables available"}
       ],
       "generalAmenities": [
         {"amenity": "Quiet"},

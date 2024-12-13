@@ -32,7 +32,7 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
     final vm = Provider.of<LocationDetailsViewModel>(context);
 
     var staticAmenities = [];
-    staticAmenities.addAll(vm.studyspaces[widget.studySpaceID].generalAmenities.map((amenity) => amenity.amenity).toList());
+    staticAmenities.addAll(vm.studyspaces.isNotEmpty ? vm.studyspaces[widget.studySpaceID].generalAmenities.map((amenity) => amenity.amenity).toList() : [""]);
 
     //log(currAmenities.toString());
 
