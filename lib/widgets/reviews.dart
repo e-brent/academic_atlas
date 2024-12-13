@@ -53,7 +53,10 @@ class _ReviewsState extends State<Reviews> {
         final review = reviews[index];
         return Container(
           padding: const EdgeInsets.all(8),
-          color: Colors.deepPurple.shade100,
+          decoration: BoxDecoration(
+            color: Colors.indigo.shade100,
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+          ),
           child: Text(
             '${review['name']}\n\n${review['content']}',
             textAlign: TextAlign.center,
