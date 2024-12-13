@@ -3,6 +3,8 @@ import 'package:academic_atlas/view_model/location_list_view_model.dart';
 import 'package:academic_atlas/widgets/locations_list.dart';
 
 import 'package:provider/provider.dart';
+import 'dart:developer';
+
 
 class LocationListView extends StatefulWidget {
   @override
@@ -22,11 +24,14 @@ class _LocationListViewState extends State<LocationListView> {
     final vm = Provider.of<LocationListViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Locations List", style: Theme.of(context).textTheme.titleMedium)
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(40.0), // here the desired height
+        child: AppBar(
+            title: Text("Campus Buildings:", style: Theme.of(context).textTheme.titleMedium)
+          ),
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: (Column( children: <Widget> [
@@ -37,6 +42,7 @@ class _LocationListViewState extends State<LocationListView> {
                 final location = vm.locations[index];
                 return GestureDetector(
                   onTap: (){
+                    log(location.id.toString());
                     Navigator.pushNamed(context,'/details',arguments:location.id,);
                 },
                 child: Card(
@@ -60,7 +66,7 @@ class _LocationListViewState extends State<LocationListView> {
                           });
                         },
                         ),
-                    tileColor: Colors.purple.shade50,
+                    tileColor: Colors.deepPurple.shade50,
                     selectedTileColor: Colors.deepPurple.shade100,
                   ),
                 ),

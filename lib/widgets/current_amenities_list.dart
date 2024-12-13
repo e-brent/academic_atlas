@@ -1,8 +1,6 @@
-import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
-import 'package:academic_atlas/view_model/study_space_view_model.dart';
 import 'dart:developer';
 
 
@@ -32,7 +30,7 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
     final vm = Provider.of<LocationDetailsViewModel>(context);
 
     var currAmenities = [];
-    currAmenities.addAll(vm.studyspaces[widget.studySpaceID].currentAmenities.map((amenity) => amenity.amenity).toList());
+    currAmenities.addAll(vm.studyspaces.isNotEmpty ? vm.studyspaces[widget.studySpaceID].currentAmenities.map((amenity) => amenity.amenity).toList() : [""]);
     //log(currAmenities.toString());
 
     return GridView.count(

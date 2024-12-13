@@ -4,11 +4,11 @@ import 'package:academic_atlas/view_model/location_view_model.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
 import 'dart:developer';
 
-class LocationDetailsViewModel extends ChangeNotifier {
-
+class UpdateViewModel extends ChangeNotifier {
   List<StudySpaceViewModel> studyspaces = <StudySpaceViewModel>[];
   LocationViewModel? location;
   StudySpaceViewModel? studySpace;
+
 
   Future<void> fetchStudySpaces(int id) async {
     final results = await Dataservice().fetchStudySpaces(id);
@@ -67,9 +67,9 @@ class LocationDetailsViewModel extends ChangeNotifier {
   }
 
   void setCrowdLevel(int id, double newCrowd) {
-    log("setting crowd level for ${studyspaces[id].name}");
+    log("setting crowd level for ${studyspaces[id].name} to ${newCrowd.toString()}");
     studyspaces[id].crowdLevel = newCrowd;
-    log(studyspaces[id].crowdLevel.toString());
+    log("new crowd level: ${studyspaces[id].crowdLevel.toString()}");
 
     notifyListeners();
   }
@@ -96,5 +96,6 @@ class LocationDetailsViewModel extends ChangeNotifier {
     //return log;
     return studyspaces[id].generalAmenities.map((amenity) => amenity.amenity).toList();
   }
+
 
 }

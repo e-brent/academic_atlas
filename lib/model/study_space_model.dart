@@ -45,4 +45,15 @@ class StudySpace {
       reviews: reviewsData != null ? reviewsData.map((review) => Map<String, String>.from(review as Map<String, dynamic>)).toList() : <Map<String, String>>[],
     );
   }
+
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "name": name,
+        "location": location,
+        "crowdLevel": crowdLevel,
+        "currentAmenities": currentAmenities,
+        "generalAmenities": generalAmenities,
+        "reviews": reviews
+      };
 }
