@@ -176,7 +176,14 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
                       const SnackBar(content: Text("Crowd update submitted!")),
                     );
                   },
-                  child: const Text("Submit"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo.shade100,
+                    minimumSize: Size(300, 50),
+                  ),
+                  child: Text(
+                    'Submit',
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
             ],

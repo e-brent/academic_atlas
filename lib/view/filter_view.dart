@@ -108,7 +108,14 @@ class _FilterViewState extends State<FilterView> {
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const MyApp()), );
                 },
-                child: const Text("Filter"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple.shade100,
+                  minimumSize: Size(300, 50),
+                ),
+                child: Text(
+                  'Submit',
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
             ),
           ],

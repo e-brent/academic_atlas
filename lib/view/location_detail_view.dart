@@ -79,7 +79,10 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
             style: ButtonStyle(
               backgroundColor: WidgetStateProperty.all<Color>(Colors.deepPurple.shade100),
             ),
-            child:Text("Update Crowd Level"),
+            child: Text(
+              'Upgrade Crowd Level',
+              style: TextStyle(color: Colors.black),
+            ),
           )
       ),
 
@@ -121,7 +124,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                 },
               ),
             //SizedBox(height:40),
-            SizedBox(height:20),
+            SizedBox(height:40),
             Column (
                 children: [
                   //Text('Location/study space details:',style: TextStyle(decoration:TextDecoration.underline, fontSize: 24, fontWeight: FontWeight.bold),),
@@ -138,14 +141,22 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                       null;
                     },
                   ),*/
+
                   StaticCrowdSlider(localStudySpace),
+                  const Divider(
+                    height: 20,
+                    thickness: 2,
+                    indent: 30,
+                    endIndent: 30,
+                    color: Colors.grey,
+                  ),
                   SizedBox(height: 20),
                   Text("Current Amenities:",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 150,
+                    height: 170,
                     width: 500,
                     child: CurrAmenitiesList(localStudySpace),
                   ),
@@ -156,34 +167,41 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     endIndent: 30,
                     color: Colors.grey,
                   ),
-                  SizedBox(height: 30),
-                  Row(
-                      children: <Widget>[
-                        // this isn't showing up for some reason idk
-                        Expanded(child:
-                          Center(child:
+                  //SizedBox(height: 10),
+                  Padding(
+                      padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    color: Colors.indigo.shade100,
+                    child: Row(
+                        children: <Widget>[
+                          // this isn't showing up for some reason idk
+                          Expanded(child:
+                            Center(child:
+                                Column(
+                                  children: [
+                                    Text("Address:\n", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                                    Text(vm.location != null ? vm.location!.address : "Address loading...")
+                                  ]
+                                )
+                            )
+                          ),
+                          VerticalDivider(), //idk why this isn't showing up
+                          Expanded(child:
+                            Center(child:
                               Column(
-                                children: [
-                                  Text("Address:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                                  Text(vm.location != null ? vm.location!.address : "Address loading...")
+                                  children: [
+                                    Text("\nHours:\n", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                                    Text(vm.location != null ? vm.location!.hours : "Hours loading..."),
+                                    Text("\n")
                                 ]
                               )
-                          )
-                        ),
-                        VerticalDivider(), //idk why this isn't showing up
-                        Expanded(child:
-                          Center(child:
-                            Column(
-                                children: [
-                                  Text("Hours:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                                  Text(vm.location != null ? vm.location!.hours : "Hours loading...")
-                              ]
                             )
                           )
-                        )
-                      ]
+                        ]
+                    )
+                  )
                   ),
-                  SizedBox(height: 40),
+                  //SizedBox(height: 20),
                   const Divider(
                     height: 20,
                     thickness: 2,
@@ -195,7 +213,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Text("Building Amenities:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                   SizedBox(height: 10),
                   Container(
-                    height: 215,
+                    height: 200,
                     width: 500,
                     child: StaticAmenitiesList(localStudySpace),
                   ),
@@ -206,7 +224,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     endIndent: 30,
                     color: Colors.grey,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Text("Reviews:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                   Container(
                     height: 400,
@@ -260,9 +278,13 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                         }
                         },
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.indigo.shade100,
                           minimumSize: Size(300, 50),
                         ),
-                        child: Text('Submit'),
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(color: Colors.black),
+                        ),
                       ),
                       SizedBox(height: 50),
                     ],

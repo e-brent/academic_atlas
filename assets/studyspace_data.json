@@ -13,6 +13,8 @@
       "generalAmenities": [
         {"amenity": "Food and coffee (Saxby's)"},
         {"amenity": "Restrooms"},
+        {"amenity": "Outlets"},
+        {"amenity": "Bright lighting"},
         {"amenity": "Water bottle fill stations"}
       ],
       "reviews": [
@@ -35,6 +37,8 @@
       "generalAmenities": [
         {"amenity": "Large and small tables"},
         {"amenity": "Comfortable chairs"},
+        {"amenity": "Gender neutral restrooms"},
+        {"amenity": "black and white printer"},
         {"amenity": "Good lighting"}
       ],
       "reviews": [
@@ -56,6 +60,8 @@
       "generalAmenities": [
         {"amenity": "Food and coffee (Einstein Bro's)"},
         {"amenity": "No outlets"},
+        {"amenity": "Water bottle fill stations"},
+        {"amenity": "Kiosk food ordering"},
         {"amenity": "Large and small tables"}
       ],
       "reviews": [
@@ -78,6 +84,8 @@
       "generalAmenities": [
         {"amenity": "Outlets"},
         {"amenity": "Good lighting"},
+        {"amenity": "Nice view"},
+        {"amenity": "Bathrooms"},
         {"amenity": "Small tables"}
       ],
       "reviews": [
@@ -100,6 +108,8 @@
       "generalAmenities": [
         {"amenity": "Uncomfortable seating"},
         {"amenity": "Not great lighting"},
+        {"amenity": "No water bottle filling station"},
+        {"amenity": "Limited outlets"},
         {"amenity": "No restrooms on floor"}
       ],
       "reviews": [
@@ -122,6 +132,8 @@
       "generalAmenities": [
         {"amenity": "Quiet space"},
         {"amenity": "Good views"},
+        {"amenity": "Gets cold at night"},
+        {"amenity": "Limited outlets"},
         {"amenity": "Limited seating"}
       ],
       "reviews": [
@@ -143,6 +155,8 @@
       "generalAmenities": [
         {"amenity": "Outlets"},
         {"amenity": "Restrooms"},
+        {"amenity": "Not a lot of tables"},
+        {"amenity": "Limited lighting"},
         {"amenity": "Variety of table sizes"}
       ],
       "reviews": [
@@ -164,6 +178,8 @@
       "generalAmenities": [
         {"amenity": "Outlets"},
         {"amenity": "Comfortable Seats"},
+        {"amenity": "Bright overhead lights"},
+        {"amenity": "Restrooms"},
         {"amenity": "Small tables"}
       ],
       "reviews": [
@@ -185,13 +201,15 @@
       ],
       "generalAmenities": [
         {"amenity": "No restrooms on floor"},
+        {"amenity": "Limited outlets"},
         {"amenity": "Good lighting"},
+        {"amenity": "Computer lab"},
         {"amenity": "Small tables"}
       ],
       "reviews": [
         {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
         {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
-        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't like leaving my stuff alone."},
         {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
       ]
     },
@@ -208,12 +226,14 @@
       "generalAmenities": [
         {"amenity": "No restrooms on floor"},
         {"amenity": "Comfortable chairs"},
+        {"amenity": "Elevator"},
+        {"amenity": "Water bottle filling station"},
         {"amenity": "Small tables"}
       ],
       "reviews": [
         {"name": "Syd M", "content": "The lighting is nice and keeps me awake, but the tables are too small."},
         {"name": "Sophie M", "content": "I enjoyed all of the natural lighting, but the seating situation left something to be desired."},
-        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't lik leaving my stuff alone."},
+        {"name": "Matt B", "content": "I wish there were bathrooms on this floor, I don't like leaving my stuff alone."},
         {"name": "Joe R", "content": "I come here to work on group projects a lot. I think it's a good space for groups."}
       ]
     },
@@ -230,6 +250,8 @@
       "generalAmenities": [
         {"amenity": "Restrooms"},
         {"amenity": "Quiet"},
+        {"amenity": "Outlets"},
+        {"amenity": "Nice view"},
         {"amenity": "Small tables"}
       ],
       "reviews": [
@@ -252,6 +274,8 @@
       "generalAmenities": [
         {"amenity": "Collaborative space"},
         {"amenity": "Medium tables"},
+        {"amenity": "Some noise"},
+        {"amenity": "Outlets"},
         {"amenity": "Small tables"}
       ],
       "reviews": [
@@ -274,6 +298,7 @@
       "generalAmenities": [
         {"amenity": "Large tables"},
         {"amenity": "Good lighting"},
+        {"amenity": "Comfortable chairs"},
         {"amenity": "Medium noise level"}
       ],
       "reviews": [
@@ -296,6 +321,7 @@
       "generalAmenities": [
         {"amenity": "Small tables"},
         {"amenity": "In a thoroughfare"},
+        {"amenity": "Some outlets"},
         {"amenity": "Medium noise level"}
       ],
       "reviews": [
@@ -318,6 +344,8 @@
       "generalAmenities": [
         {"amenity": "Large tables"},
         {"amenity": "Echoey"},
+        {"amenity": "Water bottle fill stations"},
+        {"amenity": "Outlets available"},
         {"amenity": "Restrooms"}
       ],
       "reviews": [
@@ -340,6 +368,7 @@
       "generalAmenities": [
         {"amenity": "Quiet"},
         {"amenity": "No outlets"},
+        {"amenity": "Water fountain"},
         {"amenity": "Uncomfortable chairs"}
       ],
       "reviews": [
