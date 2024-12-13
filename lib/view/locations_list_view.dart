@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:academic_atlas/view_model/location_list_view_model.dart';
-import 'package:academic_atlas/widgets/locations_list.dart';
+//import 'package:academic_atlas/widgets/locations_list.dart';
 
 import 'package:provider/provider.dart';
 import 'dart:developer';
