@@ -3,8 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
 import 'dart:developer';
 
-
-import 'package:academic_atlas/router.dart' as LocalRouter;
+//import 'package:academic_atlas/router.dart' as LocalRouter;
 import 'package:academic_atlas/constants.dart';
 
 class CurrAmenitiesList extends StatefulWidget {
@@ -43,12 +42,11 @@ class _CurrAmenitiesListState extends State<CurrAmenitiesList> {
       children: currAmenities.map((e) =>
           Container(
             padding: const EdgeInsets.all(8),
-            //color: Colors.deepPurple.shade100,
-            child: Text(e),
-            decoration: BoxDecoration(
-              color: Colors.deepPurple.shade100,
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-            )
+              decoration: BoxDecoration(
+                color: Colors.deepPurple.shade100,
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
+            child: Text(e)
           )
       ).toList(),
     );

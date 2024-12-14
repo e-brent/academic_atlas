@@ -5,7 +5,7 @@ import 'package:academic_atlas/view_model/update_view_model.dart';
 import 'package:intl/intl.dart';
 import 'dart:developer';
 
-import 'package:academic_atlas/router.dart' as LocalRouter;
+//import 'package:academic_atlas/router.dart' as LocalRouter;
 import 'package:academic_atlas/constants.dart';
 
 class UpdateCrowdView extends StatefulWidget {
@@ -61,6 +61,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
     "Office hours group(s) working"
   ];
   List<String> selectedItems = [];
+  List<String> deselectedItems = [];
 
   String getFormattedDateTime() {
     final DateTime now = DateTime.now();
@@ -88,7 +89,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
 
     return Scaffold (
       appBar: AppBar(
-          title: Text("Update Crowd for ${studySpaceName}",
+          title: Text("Update Crowd for $studySpaceName",
             style: TextStyle( fontWeight: FontWeight.bold),
           ),
       ),
@@ -130,7 +131,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
                 style: TextStyle(fontSize: 14, fontStyle: FontStyle.italic, color: Colors.deepPurple.shade600),
               ),
               const SizedBox(height: 30),
-              const Text("Share Some Location Details:",
+              const Text("Share Some Details:",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
@@ -154,6 +155,29 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
                 ).toList(),
               ),
               const SizedBox(height: 50),
+              const Text("Do any of these seem incorrect?",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Wrap(
+                spacing: 5.0,
+                runSpacing: 5.0,
+                children: currAmenities.map((e) => Padding(
+                  padding: const EdgeInsets.only(top:1),
+                  child: FilterChip(
+                      label: Text(e),
+                      selected: deselectedItems.contains(e),
+                      onSelected: (bool value) {
+                        if (deselectedItems.contains(e)) {
+                          deselectedItems.remove(e);
+                        } else {
+                          deselectedItems.add(e);
+                        }
+                        setState(() {});
+                      }),
+                ),
+                ).toList(),
+              ),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
@@ -165,7 +189,8 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
                     }
 
                     vm.setCrowdLevel(widget.studySpaceID, _sliderValue);
-                    vm.setCurrentAmenities(widget.studySpaceID, selectedItems);
+                    vm.addCurrentAmenities(widget.studySpaceID, selectedItems);
+                    vm.removeCurrentAmenities(widget.studySpaceID, deselectedItems);
                     //log(_sliderValue.toString());
 
                     //Navigator.pushNamed(context, detailsRoute, arguments: widget.locationID);

@@ -47,11 +47,11 @@ class _StaticAmenitiesListState extends State<StaticAmenitiesList> {
           Container(
             padding: const EdgeInsets.all(8),
             //color: Colors.deepPurple.shade100,
-            child: Text(e),
             decoration: BoxDecoration(
               color: Colors.deepPurple.shade100,
               borderRadius: BorderRadius.all(Radius.circular(5)),
-            )
+            ),
+            child: Text(e)
           )
       ).toList(),
     );
