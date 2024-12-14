@@ -34,9 +34,14 @@ class StudySpaceViewModel extends ChangeNotifier{
     return studyspace.currentAmenities;
   }
 
-  void setCurrentAmenities(String amenity){
+  void addCurrentAmenities(String amenity){
     Amenities newAmenity = Amenities(amenity: amenity);
     currentAmenities.add(newAmenity);
+  }
+
+  void removeCurrentAmenities(String amenity){
+    Amenities oldAmenity = Amenities(amenity: amenity);
+    currentAmenities.remove(oldAmenity);
   }
 
   List<Amenities> get generalAmenities{

@@ -80,12 +80,12 @@ class UpdateViewModel extends ChangeNotifier {
     return studyspaces[id].currentAmenities.map((amenity) => amenity.amenity).toList();
   }
 
-  void setCurrentAmenities(int id, List<String> newAmenities) {
+  void addCurrentAmenities(int id, List<String> newAmenities) {
 
     log("setting current amenities");
 
     for (int i = 0; i < newAmenities.length; i++){
-      studyspaces[id].setCurrentAmenities(newAmenities[i]);
+      studyspaces[id].addCurrentAmenities(newAmenities[i]);
     }
 
     notifyListeners();

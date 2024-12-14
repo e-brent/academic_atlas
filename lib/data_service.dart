@@ -1,5 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+
+import 'package:academic_atlas/file_manager.dart';
+
 import 'package:academic_atlas/model/user_model.dart';
 import 'package:academic_atlas/model/location_model.dart';
 import 'package:academic_atlas/model/study_space_model.dart';
@@ -7,7 +10,8 @@ import 'package:academic_atlas/model/study_space_model.dart';
 class Dataservice {
 
   Future<List<Location>> fetchLocations() async {
-    final String response = await rootBundle.loadString('assets/location_data.json');
+    //final String response = await rootBundle.loadString('assets/location_data.json');
+    final String response = await FileManager().readLocationFile();
 
     final data = await jsonDecode(response);
 
@@ -17,7 +21,8 @@ class Dataservice {
   }
 
   Future<Location> fetchLocation(int id) async {
-    final String response = await rootBundle.loadString('assets/location_data.json');
+    //final String response = await rootBundle.loadString('assets/location_data.json');
+    final String response = await FileManager().readLocationFile();
 
     final data = await jsonDecode(response);
 
@@ -30,11 +35,12 @@ class Dataservice {
 
   Future<List<StudySpace>> fetchStudySpaces(int locationID) async {
 
-    final String response = await rootBundle.loadString('assets/studyspace_data.json');
+    //final String response = await rootBundle.loadString('assets/studyspace_data.json');
+    final String response = await FileManager().readStudySpaceFile();
 
     final data = await jsonDecode(response);
 
-    final Iterable json = data["studyspaces"];
+    final Iterable json = data; //["studyspaces"]
 
     final List allstudyspaces = json.map((studyspace) => StudySpace.fromJson(studyspace)).toList();
 
@@ -60,8 +66,12 @@ class Dataservice {
     return allStudySpaces[id];
   }
 
-  Future<void> saveStudySpace(int id) async {
-    final StudySpace space =  await fetchStudySpace(id);
+  Future<void> saveLocations(List<Location> locations) async {
+
+  }
+
+  Future<void> saveStudySpaces(List<StudySpace> studyspaces) async {
+    await FileManager().writeStudySpaceFile(studyspaces);
   }
 
   Future<List<User>> fetchUsers() async {

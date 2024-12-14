@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'dart:developer';
+
 import 'package:academic_atlas/data_service.dart';
+
 import 'package:academic_atlas/view_model/location_view_model.dart';
 import 'package:academic_atlas/view_model/study_space_view_model.dart';
-import 'dart:developer';
+
+import 'package:academic_atlas/model/study_space_model.dart';
 
 class LocationDetailsViewModel extends ChangeNotifier {
 
@@ -41,6 +45,15 @@ class LocationDetailsViewModel extends ChangeNotifier {
 
   }
 
+  Future<void> saveStudySpaces() async {
+    List<StudySpace> spaces = [];
+    for (studySpace in studyspaces) {
+      spaces.add(studySpace!.studyspace);
+    }
+
+    Dataservice().saveStudySpaces(spaces);
+  }
+
   List<String> getStudySpaceNames(int id) {
     List<String> spaceNames = [];
     for (studySpace in studyspaces) {
@@ -71,6 +84,8 @@ class LocationDetailsViewModel extends ChangeNotifier {
     studyspaces[id].crowdLevel = newCrowd;
     log(studyspaces[id].crowdLevel.toString());
 
+    saveStudySpaces();
+
     notifyListeners();
   }
 
@@ -80,13 +95,25 @@ class LocationDetailsViewModel extends ChangeNotifier {
     return studyspaces[id].currentAmenities.map((amenity) => amenity.amenity).toList();
   }
 
-  void setCurrentAmenities(int id, List<String> newAmenities) {
+  void addCurrentAmenities(int id, List<String> newAmenities) {
 
-    log("setting current amenities");
+    //log("setting current amenities");
 
     for (int i = 0; i < newAmenities.length; i++){
-      studyspaces[id].setCurrentAmenities(newAmenities[i]);
+      studyspaces[id].addCurrentAmenities(newAmenities[i]);
     }
+
+    saveStudySpaces();
+
+    notifyListeners();
+  }
+
+  void removeCurrentAmenities(int id, List<String> oldAmenities){
+    for (int i = 0; i < oldAmenities.length; i++){
+      studyspaces[id].removeCurrentAmenities(oldAmenities[i]);
+    }
+
+    saveStudySpaces();
 
     notifyListeners();
   }
