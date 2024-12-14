@@ -54,7 +54,7 @@ class _ReviewsState extends State<Reviews> {
         return Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: Colors.deepPurple.shade100,
+            color: Colors.indigo.shade100,
             borderRadius: BorderRadius.all(Radius.circular(5)),
           ),
           child: Text(

@@ -4,6 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:academic_atlas/view/filter_view.dart';
 import 'package:academic_atlas/view/search_view.dart';
+import 'package:academic_atlas/view/location_detail_view.dart';
 
 class MapView extends StatefulWidget {
   const MapView({super.key});
@@ -57,83 +58,163 @@ class _MapViewState extends State<MapView> {
             MarkerLayer(
                 markers:[
                   Marker(
-                    point: LatLng(40.4440, -79.9532), // Towers
+                    point: LatLng(40.4440, -79.9532), //cathy
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
-                    )
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(2),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
+                    ),
                   ),
                   Marker(
-                    point: LatLng(40.4425, -79.9572), // Hillman Library
+                    point: LatLng(40.4426, -79.9542), // Hillman Library
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(0),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Marker(
                     point: LatLng(40.4414, -79.9560), //  Sennott
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(3),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Marker(
                     point: LatLng(40.4423, -79.9553), //Lawrence Hall
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(4),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Marker(
                     point: LatLng(40.4436, -79.9545), //wpu
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(5),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Marker(
                     point: LatLng(40.4438, -79.9584), //benedum
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(6),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Marker(
                     point: LatLng(40.4453, -79.9540), //alumni
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(7),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Marker(
                     point: LatLng(40.4416, -79.9537), // Posvar Hall
                     width: 40,
                     height: 40,
-                    builder: (ctx) => const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 30,
+                    builder: (ctx) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationDetailsView(1),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 30,
+                      ),
                     ),
                   ),
                 ],
