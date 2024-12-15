@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             // Set the predictive back transitions for Android.
             TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
           },
-        )
+        ),
       ),
             home:Column(
             children: [

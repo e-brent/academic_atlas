@@ -70,7 +70,7 @@ class LocationDetailsViewModel extends ChangeNotifier {
       spaces.add(studySpace!.studyspace);
     }
 
-    log("spaces ${spaces.toString()}");
+    //log("spaces ${spaces.toString()}");
     Dataservice().saveStudySpaces(spaces);
   }
 

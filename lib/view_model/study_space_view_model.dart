@@ -25,6 +25,8 @@ class StudySpaceViewModel extends ChangeNotifier{
 
   set crowdLevel(double crowd){
     double newCrowd = (studyspace.crowdLevel + crowd)/2;
+    String rounded = newCrowd.toStringAsFixed(2);
+    newCrowd = double.parse(rounded);
     studyspace.crowdLevel = newCrowd;
   }
 
