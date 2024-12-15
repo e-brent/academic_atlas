@@ -1,5 +1,6 @@
 import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:flutter/cupertino.dart';
+import 'dart:developer';
 
 class StudySpaceViewModel extends ChangeNotifier{
   final StudySpace studyspace;
@@ -41,8 +42,10 @@ class StudySpaceViewModel extends ChangeNotifier{
   }
 
   void removeCurrentAmenities(String amenity){
-    Amenities oldAmenity = Amenities(amenity: amenity);
-    currentAmenities.remove(oldAmenity);
+    //Amenities oldAmenity = Amenities(amenity: amenity);
+    //currentAmenities.remove(oldAmenity);
+
+    currentAmenities.removeWhere((currAmenity) => currAmenity.amenity == amenity);
   }
 
   List<Amenities> get generalAmenities{
