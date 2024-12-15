@@ -23,7 +23,8 @@ class StudySpaceViewModel extends ChangeNotifier{
   }
 
   set crowdLevel(double crowd){
-    studyspace.crowdLevel = crowd;
+    double newCrowd = (studyspace.crowdLevel + crowd)/2;
+    studyspace.crowdLevel = newCrowd;
   }
 
   void setCrowdLevel(double crowd){
