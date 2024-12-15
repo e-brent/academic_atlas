@@ -98,50 +98,45 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
             SizedBox(height:30),
             Text("Select a study space in ${vm.location != null ? vm.location!.name : "Loading..."}",style: TextStyle(fontStyle: FontStyle.italic),),
             SizedBox(height: 10),
-            DropdownButton<String>(
-                isDense: false,
-                hint: Text("Select a study space"),
-                value: dropdownvalue,
-                items: items.map((String items) {
-                  return DropdownMenuItem(
-                    value: items,
-                    child: Text(
-                      items,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  );
-                }).toList(),
-                onChanged: (String? value) {
-                  setState(() {
-                    dropdownvalue = value!;
-                  });
-                  //studySpaceID = items.indexOf(dropdownvalue) - 1;
-                  //studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
-                  localStudySpace = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
-                  //studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+                color: Colors.deepPurple.shade100,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.deepPurple)
+            ),
+            // dropdown below..
+            child:
+              DropdownButton<String>(
+                  isDense: false,
+                  hint: Text("Select a study space"),
+                  value: dropdownvalue,
+                  items: items.map((String items) {
+                    return DropdownMenuItem(
+                      value: items,
+                      child: Text(
+                        items,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? value) {
+                    setState(() {
+                      dropdownvalue = value!;
+                    });
+                    //studySpaceID = items.indexOf(dropdownvalue) - 1;
+                    //studySpaceID = idNamePairs.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                    localStudySpace = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
+                    //studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
 
-                  log("here ${dropdownvalue}");
-                },
-              ),
+                    log("here ${dropdownvalue}");
+                  },
+                ),
+            ),
             //SizedBox(height:40),
             SizedBox(height:40),
             Column (
                 children: [
-                  //Text('Location/study space details:',style: TextStyle(decoration:TextDecoration.underline, fontSize: 24, fontWeight: FontWeight.bold),),
-                  //SizedBox(height:30),
-                  /*Text("Current Crowd Level: ${vm.studyspaces.isNotEmpty ? vm.studyspaces[localStudySpace].crowdLevel.toString() : "Loading..."}",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  Slider(
-                    value: vm.studyspaces.isNotEmpty ? vm.studyspaces[localStudySpace].crowdLevel : 0,
-                    min:0,
-                    max:10,
-                    divisions: 10,
-                    onChanged: (value){
-                      null;
-                    },
-                  ),*/
-
                   StaticCrowdSlider(localStudySpace),
                   const Divider(
                     height: 20,
@@ -171,7 +166,11 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Padding(
                       padding: const EdgeInsets.all(16.0),
                   child: Container(
-                    color: Colors.indigo.shade100,
+                    //color: Colors.indigo.shade100,
+                      decoration: BoxDecoration(
+                        color: Colors.indigo.shade100,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      ),
                     child: Row(
                         children: <Widget>[
                           // this isn't showing up for some reason idk
