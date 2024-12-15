@@ -124,4 +124,15 @@ class LocationDetailsViewModel extends ChangeNotifier {
     return studyspaces[id].generalAmenities.map((amenity) => amenity.amenity).toList();
   }
 
+  List<Map<String, String>> getReviews(int id){
+    return studyspaces[id].reviews;
+  }
+
+  void addReview(int id, Map<String, String> review){
+    studyspaces[id].addReview(review);
+
+    saveStudySpaces();
+
+    notifyListeners();
+  }
 }

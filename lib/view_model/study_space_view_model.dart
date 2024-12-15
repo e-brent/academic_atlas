@@ -51,4 +51,8 @@ class StudySpaceViewModel extends ChangeNotifier{
   List<Map<String,String>> get reviews{
     return studyspace.reviews;
   }
+
+  void addReview(Map<String, String> review){
+    reviews.add(review);
+  }
 }
