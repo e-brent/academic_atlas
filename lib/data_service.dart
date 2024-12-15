@@ -43,12 +43,12 @@ class Dataservice {
 
     final data = await jsonDecode(response);
 
-    log("all study space data ${data.toString()}");
+    //log("all study space data ${data.toString()}");
 
     final Iterable json = data["studyspaces"]; //
 
     final List<StudySpace> allstudyspaces = json.map((studyspace) => StudySpace.fromJson(studyspace)).toList();
-    log(allstudyspaces.toString());
+    //log(allstudyspaces.toString());
 
     return allstudyspaces;
   }

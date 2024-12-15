@@ -43,11 +43,11 @@ class FileManager {
     final path = await _directoryPath;
     final studySpaceFile = File('$path/studyspace_data.json');
 
-    //if (!await studySpaceFile.exists()){
+    if (!await studySpaceFile.exists()){
       final initialContent = await rootBundle.loadString(initialStudySpaces);
       await studySpaceFile.create();
       await studySpaceFile.writeAsString(initialContent);
-    //}
+    }
     return studySpaceFile;
   }
 
@@ -89,7 +89,7 @@ class FileManager {
     File file = await _studySpaceFile;
     await file.writeAsString(json.encode(studyspaces));
 
-    log(studyspaces.toString());
+    //log(studyspaces.toString());
 
     return studyspaces;
   }
