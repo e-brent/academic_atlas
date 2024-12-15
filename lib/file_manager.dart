@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
@@ -39,6 +40,9 @@ class FileManager {
   }
 
   Future<File> get _studySpaceFile async {
+
+    //await deleteStudySpaceFile();
+
     final path = await _directoryPath;
     final studySpaceFile = File('$path/studyspace_data.json');
 
@@ -63,7 +67,11 @@ class FileManager {
   Future<String> readStudySpaceFile() async {
   //Future<Map<String, dynamic>> readStudySpaceFile() async {
     //String fileContent = "";
+
+    log("running read studyspace file");
     File file = await _studySpaceFile;
+
+    //log(await file.readAsString());
 
     return await file.readAsString();
   }
@@ -85,5 +93,12 @@ class FileManager {
     await file.writeAsString(json.encode(studyspaces));
     return studyspaces;
   }
+
+  /*deleteStudySpaceFile() async {
+    File file = await _studySpaceFile;
+    if(await file.exists()){
+      await file.delete();
+    }
+  }*/
 
 }
