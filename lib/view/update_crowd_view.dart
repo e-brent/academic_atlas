@@ -26,6 +26,7 @@ class _UpdateCrowdViewState extends State<UpdateCrowdView> {
   void initState() {
     super.initState();
     Provider.of<LocationDetailsViewModel>(context, listen: false).fetchStudySpaces(widget.locationID);
+    Provider.of<LocationDetailsViewModel>(context, listen: false).fetchAllStudySpaces();
   }
 
   double _sliderValue = 5.0;

@@ -36,6 +36,23 @@ class Dataservice {
     return allLocations[id];
   }
 
+  Future<List<StudySpace>> fetchAllStudySpaces() async {
+
+    //final String response = await rootBundle.loadString('assets/studyspace_data.json');
+    final String response = await FileManager().readStudySpaceFile();
+
+    final data = await jsonDecode(response);
+
+    log("all study space data ${data.toString()}");
+
+    final Iterable json = data["studyspaces"]; //
+
+    final List<StudySpace> allstudyspaces = json.map((studyspace) => StudySpace.fromJson(studyspace)).toList();
+    log(allstudyspaces.toString());
+
+    return allstudyspaces;
+  }
+
   Future<List<StudySpace>> fetchStudySpaces(int locationID) async {
 
     //final String response = await rootBundle.loadString('assets/studyspace_data.json');
@@ -76,11 +93,11 @@ class Dataservice {
   }
 
   Future<void> saveLocations(List<Location> locations) async {
-
+    await FileManager().writeLocationFile({"locations" : locations});
   }
 
   Future<void> saveStudySpaces(List<StudySpace> studyspaces) async {
-    await FileManager().writeStudySpaceFile(studyspaces);
+    await FileManager().writeStudySpaceFile({"studyspaces" : studyspaces});
   }
 
   Future<List<User>> fetchUsers() async {

@@ -11,6 +11,7 @@ import 'package:academic_atlas/model/study_space_model.dart';
 class LocationDetailsViewModel extends ChangeNotifier {
 
   List<StudySpaceViewModel> studyspaces = <StudySpaceViewModel>[];
+  List<StudySpaceViewModel> allstudyspaces = <StudySpaceViewModel>[];
   LocationViewModel? location;
   StudySpaceViewModel? studySpace;
 
@@ -42,15 +43,34 @@ class LocationDetailsViewModel extends ChangeNotifier {
     studySpace = StudySpaceViewModel(studyspace: results);
 
     notifyListeners();
+  }
 
+  Future<void> fetchAllStudySpaces() async {
+    final results = await Dataservice().fetchAllStudySpaces();
+
+    allstudyspaces =
+        results.map((studyspace) => StudySpaceViewModel(studyspace: studyspace))
+            .toList();
+
+    notifyListeners();
   }
 
   Future<void> saveStudySpaces() async {
+    List<int> ids = [];
+    for(studySpace in studyspaces){
+      ids.add(studySpace!.id);
+    }
+
+    for (int i = 0; i < studyspaces.length; i++){
+      allstudyspaces[ids[i]] = studyspaces[i];
+    }
+
     List<StudySpace> spaces = [];
-    for (studySpace in studyspaces) {
+    for (studySpace in allstudyspaces) {
       spaces.add(studySpace!.studyspace);
     }
 
+    log("spaces ${spaces.toString()}");
     Dataservice().saveStudySpaces(spaces);
   }
 
