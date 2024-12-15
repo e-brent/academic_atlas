@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
+import 'dart:developer';
 import 'package:academic_atlas/file_manager.dart';
 
 import 'package:academic_atlas/model/user_model.dart';
@@ -14,6 +15,8 @@ class Dataservice {
     final String response = await FileManager().readLocationFile();
 
     final data = await jsonDecode(response);
+
+    //log("data ${data.toString()}");
 
     final Iterable json = data["locations"];
 
@@ -40,13 +43,15 @@ class Dataservice {
 
     final data = await jsonDecode(response);
 
-    final Iterable json = data; //["studyspaces"]
+    //log("data ${data.toString()}");
+
+    final Iterable json = data["studyspaces"]; //
 
     final List allstudyspaces = json.map((studyspace) => StudySpace.fromJson(studyspace)).toList();
 
     List<StudySpace> studyspaces = [];
-    for (StudySpace space in allstudyspaces){
-      if (space.location == locationID){
+    for (StudySpace space in allstudyspaces) {
+      if (space.location == locationID) {
         studyspaces.add(space);
       }
     }
@@ -55,13 +60,17 @@ class Dataservice {
   }
 
   Future<StudySpace> fetchStudySpace(int id) async {
-    final String response = await rootBundle.loadString('assets/studyspace_data.json');
+    //final String response = await rootBundle.loadString('assets/studyspace_data.json');
+    final String response = await FileManager().readStudySpaceFile();
 
     final data = await jsonDecode(response);
 
-    final Iterable json = data["studyspaces"];
+    final Iterable json = data["studyspaces"]; //
 
     final List allStudySpaces = json.map((studyspace) => StudySpace.fromJson(studyspace)).toList();
+
+    //log('id ${id.toString()}');
+    //log(allStudySpaces[id].toString());
 
     return allStudySpaces[id];
   }
