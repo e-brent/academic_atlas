@@ -40,17 +40,14 @@ class FileManager {
   }
 
   Future<File> get _studySpaceFile async {
-
-    //await deleteStudySpaceFile();
-
     final path = await _directoryPath;
     final studySpaceFile = File('$path/studyspace_data.json');
 
-    if (!await studySpaceFile.exists()){
+    //if (!await studySpaceFile.exists()){
       final initialContent = await rootBundle.loadString(initialStudySpaces);
       await studySpaceFile.create();
       await studySpaceFile.writeAsString(initialContent);
-    }
+    //}
     return studySpaceFile;
   }
 
@@ -76,7 +73,7 @@ class FileManager {
     return await file.readAsString();
   }
 
-  Future<List<Location>> writeLocationFile(List<Location> locations) async{
+  Future<Map<String, List<Location>>> writeLocationFile(Map<String, List<Location>> locations) async{
   //Future<Location> writeLocationFile(int id, String name, String hours, String address, String image, double coordNS, double coordEW, bool favorite) async {
     //final Location location = Location(id: id, name: name, hours: hours, address: address, image: image, coordNS: coordNS, coordEW: coordEW, isFavorite: favorite);
 
@@ -85,20 +82,16 @@ class FileManager {
     return locations;
   }
 
-  Future<List<StudySpace>> writeStudySpaceFile(List<StudySpace> studyspaces) async{
+  Future<Map<String, List<StudySpace>>> writeStudySpaceFile(Map<String, List<StudySpace>> studyspaces) async{
   //Future<StudySpace> writeStudySpaceFile(int id, String name, int location, double crowdLevel, List<Amenities> currentAmenities, List<Amenities> generalAmenities, List<Map<String,String>> reviews) async {
     //final StudySpace space = StudySpace(id: id, name: name, location: location, crowdLevel: crowdLevel, currentAmenities: currentAmenities, generalAmenities: generalAmenities, reviews: reviews);
 
     File file = await _studySpaceFile;
     await file.writeAsString(json.encode(studyspaces));
+
+    log(studyspaces.toString());
+
     return studyspaces;
   }
-
-  /*deleteStudySpaceFile() async {
-    File file = await _studySpaceFile;
-    if(await file.exists()){
-      await file.delete();
-    }
-  }*/
 
 }
