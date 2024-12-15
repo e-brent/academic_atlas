@@ -229,11 +229,12 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                   Container(
                     height: 400,
                     width: 500,
-                    child: Reviews(localStudySpace,onAddReview: (name, content) {
+                    /*child: Reviews(localStudySpace,onAddReview: (name, content) {
                       setState(() {
                         reviews.add({'name': name, 'content': content});
                       });
-                    }),
+                    }),*/
+                    child: Reviews(localStudySpace),
                   ),
                   SizedBox(height: 30),
                   Text("Leave a Review:",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
@@ -273,6 +274,8 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                             reviews.add(
                                 {'name': name, 'content': reviewContent});
                           });
+
+                          vm.addReview(localStudySpace, {'name': name, 'content': reviewContent});
                           nameController.clear();
                           reviewController.clear();
                         }
