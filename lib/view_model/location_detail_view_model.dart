@@ -12,6 +12,7 @@ class LocationDetailsViewModel extends ChangeNotifier {
 
   List<StudySpaceViewModel> studyspaces = <StudySpaceViewModel>[];
   List<StudySpaceViewModel> allstudyspaces = <StudySpaceViewModel>[];
+  List<StudySpaceViewModel> filteredStudySpaces = <StudySpaceViewModel>[]; //added new list of filtered study spaces for filter view
   LocationViewModel? location;
   StudySpaceViewModel? studySpace;
 
@@ -152,6 +153,35 @@ class LocationDetailsViewModel extends ChangeNotifier {
     studyspaces[id].addReview(review);
 
     saveStudySpaces();
+
+    notifyListeners();
+  }
+
+
+  void filterStudySpaces({String? crowdLevel, List<String>? selectedAmenities, bool? showFavs}) {
+    filteredStudySpaces = allstudyspaces.where((space) {
+      //for crowd level filtering
+      if (crowdLevel != null) {
+        final selectedLevel = int.tryParse(crowdLevel);
+        if (selectedLevel != null && space.crowdLevel > selectedLevel) { //should include all of the levels below the one selected
+          return false; //
+        }
+      }
+      //for amenities filtering, should work for if there is one of the amenities selected it will show up, does not have to be all
+      if (selectedAmenities != null && selectedAmenities.isNotEmpty) {
+        final spaceAmenities = space.currentAmenities.map((a) => a.amenity).toSet();
+        final selectedSet = selectedAmenities.toSet();
+        if (spaceAmenities.intersection(selectedSet).isEmpty) {
+          return false;
+        }
+      }
+      //for the is favorites if we get around to implementing this
+      //if (showFavs == true && !space.isFavorite) {
+       // return false;
+      //}
+
+      return true;
+    }).toList();
 
     notifyListeners();
   }
