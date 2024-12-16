@@ -1,12 +1,10 @@
 import 'dart:io';
 import 'dart:convert';
-import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
 
-
-import 'package:academic_atlas/model/user_model.dart';
+//import 'package:academic_atlas/model/user_model.dart';
 import 'package:academic_atlas/model/location_model.dart';
 import 'package:academic_atlas/model/study_space_model.dart';
 

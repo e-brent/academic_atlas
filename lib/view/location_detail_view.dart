@@ -62,13 +62,17 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
     final vm = Provider.of<LocationDetailsViewModel>(context, listen: false);
 
     return Scaffold (
+      extendBody: true,
       appBar: AppBar(
-          title: Text(vm.location != null ? vm.location!.name : "Loading...")
+        elevation: 10,
+        shadowColor: Colors.black,
+        title: Text(vm.location != null ? vm.location!.name : "Loading...")
       ),
 
       bottomNavigationBar: Container (
-          height: 63,
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 5),
+          height: 70,
+          padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+          color: const Color(0x00ffffff),
           child: ElevatedButton(
             onPressed:(){
               Navigator.push(context,
@@ -76,12 +80,14 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                 //MaterialPageRoute(builder: (context) => UpdateCrowdView(localStudySpace)));
                 log(localStudySpace.toString());
             },
-            style: ButtonStyle(
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.deepPurple.shade100),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.deepPurple.shade900.withBlue(80),
+              elevation: 10.0,
+              shadowColor: Colors.black,
             ),
             child: Text(
               'Update Crowd Level',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
             ),
           )
       ),
@@ -90,6 +96,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height:10),
             Image.asset(vm.location?.image ?? "assets/default.png",
               height: 250,
               width: 350,
@@ -129,7 +136,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     localStudySpace = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
                     //studySpaceID = nameOrder.entries.firstWhere((k) => k.value == dropdownvalue).key;
 
-                    log("here ${dropdownvalue}");
+                    //log("here ${dropdownvalue}");
                   },
                 ),
             ),
@@ -146,7 +153,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                     color: Colors.grey,
                   ),
                   SizedBox(height: 20),
-                  Text("Current Amenities:",
+                  Text("Current status:",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
@@ -288,7 +295,7 @@ class _LocationDetailsViewState extends State<LocationDetailsView> {
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      SizedBox(height: 50),
+                      SizedBox(height: 75),
                     ],
                   )
                 ]

@@ -1,13 +1,7 @@
-import 'package:academic_atlas/model/study_space_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
-import 'package:academic_atlas/view_model/study_space_view_model.dart';
 import 'dart:developer';
-
-
-import 'package:academic_atlas/router.dart' as LocalRouter;
-import 'package:academic_atlas/constants.dart';
 
 class StaticAmenitiesList extends StatefulWidget {
   final int studySpaceID;

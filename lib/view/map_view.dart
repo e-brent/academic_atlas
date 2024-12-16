@@ -20,7 +20,7 @@ class _MapViewState extends State<MapView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pitt Academic Atlas", style: TextStyle(color: Colors.deepPurple)),
+        title: Text("Pitt Academic Atlas", style: TextStyle(color: Colors.deepPurple.shade900.withBlue(80))),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
