@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:academic_atlas/view_model/location_detail_view_model.dart';
-import 'package:academic_atlas/view_model/update_view_model.dart';
+//import 'package:academic_atlas/view_model/update_view_model.dart';
 import 'package:intl/intl.dart';
 import 'dart:developer';
 
 //import 'package:academic_atlas/router.dart' as LocalRouter;
-import 'package:academic_atlas/constants.dart';
+//import 'package:academic_atlas/constants.dart';
 
 class UpdateCrowdView extends StatefulWidget {
 

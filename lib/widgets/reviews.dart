@@ -63,10 +63,19 @@ class _ReviewsState extends State<Reviews> {
             color: Colors.indigo.shade100,
             borderRadius: BorderRadius.all(Radius.circular(5)),
           ),
-          child: Text(
-            '${review['name']}\n\n${review['content']}',
-            textAlign: TextAlign.center,
-          ),
+          child: Column (
+            children: [
+              Text(
+                '${review['name']}',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                '\n${review['content']}',
+                textAlign: TextAlign.center,
+              )
+            ]
+          )
         );
       },
     );

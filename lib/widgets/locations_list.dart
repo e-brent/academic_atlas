@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:academic_atlas/view_model/location_view_model.dart';
 
-import 'package:academic_atlas/router.dart' as LocalRouter;
+//import 'package:academic_atlas/router.dart' as LocalRouter;
 import 'package:academic_atlas/constants.dart';
 
 class LocationList extends StatelessWidget {
